@@ -6,23 +6,28 @@ $dark-red: #cf2829;
 $light-red: #ef1e1e;
 $dark-blue: #253237;
 $dark-gray: #666666;
-// $light-gray: #888888;
 
 $light: #f6f5f5;
 $pure: white;
 $dark: black;
-
 $light-border: rgb(231, 219, 219);
 
-$text1: 1.5rem; /* 24px */
-$text2: 1.125rem; /* 18px */
-$text3: 0.875rem; /* 14px */
-$text4: 0.75rem; /* 12px */
-$text5: 0.5rem; /* 8px */
+$transition: all 0.3s linear;
+
+$text1: 1.5rem;
+$text2: 1.125rem;
+$text3: 0.875rem;
+$text4: 0.75rem;
+$text5: 0.5rem;
 
 // ---------------------------------------- Variables End ----------------------------------------
 
 // ---------------------------------------- Utility class Start ----------------------------------------
+.active {
+  color: $light-red !important;
+  border-bottom: 3px solid $light-red !important;
+}
+
 .container {
   width: 100%;
   padding: 0 3.125rem;
@@ -62,3 +67,4 @@ body {
 }
 
 @import "./header";
+@import "./navbar";

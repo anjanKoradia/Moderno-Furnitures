@@ -1,10 +1,10 @@
 /* Font Family */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-/* 24px */
-/* 18px */
-/* 14px */
-/* 12px */
-/* 8px */
+.active {
+  color: #ef1e1e !important;
+  border-bottom: 3px solid #ef1e1e !important;
+}
+
 .container {
   width: 100%;
   padding: 0 3.125rem;
@@ -147,4 +147,61 @@ body {
 }
 
 /* Top Nav Styling End */
+/* Navbar Styling Start */
+.navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 5;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--primary-text);
+  font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover {
+  color: #ef1e1e;
+}
+
+.navbar .shop_dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.navbar .shop_dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 35px;
+  background-color: white;
+  width: 200px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.navbar .shop_dropdown .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight: normal;
+}
+
+.navbar .shop_dropdown .dropdown-content a:hover {
+  background-color: #f6f5f5;
+  color: #cf2829;
+}
+
+.navbar .shop_dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Navbar Styling End */
 /*# sourceMappingURL=App.css.map */
