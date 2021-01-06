@@ -1,1 +1,150 @@
-/* No CSS *//*# sourceMappingURL=App.css.map */
+/* Font Family */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+/* 24px */
+/* 18px */
+/* 14px */
+/* 12px */
+/* 8px */
+.container {
+  width: 100%;
+  padding: 0 3.125rem;
+  margin: 0 auto;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.justify-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.justify-around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.align-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Topbar Styling Start */
+.topbar {
+  background-color: #253237;
+  color: white;
+  padding: 0.4rem 3.125rem;
+  font-size: 0.875rem;
+}
+
+.topbar .icons a {
+  color: white;
+  margin-right: 0.6rem;
+}
+
+.topbar .auth > div a {
+  color: white;
+  text-decoration: none;
+  margin-left: 0.35rem;
+}
+
+.topbar .auth .divider {
+  padding: 0 1rem;
+}
+
+/* Topbar Styling End */
+/* Top Nav Styling Start */
+.top_nav {
+  background-color: white;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e7dbdb;
+}
+
+.top_nav i {
+  color: #253237;
+}
+
+.top_nav .hamburger {
+  display: none;
+}
+
+.top_nav .contact_info i {
+  margin-right: 0.8rem;
+}
+
+.top_nav .logo img {
+  width: 160px;
+  height: 40px;
+}
+
+.top_nav .right_side .search {
+  position: relative;
+  padding-right: 1rem;
+}
+
+.top_nav .right_side .search input {
+  width: 250px;
+  height: 40px;
+  border-radius: 50px;
+  outline: none;
+  padding: 0 2.2rem;
+  border: 2px solid #e7dbdb;
+  background-color: #f6f5f5;
+}
+
+.top_nav .right_side .search i {
+  position: absolute;
+  left: 0.8rem;
+  color: #666666;
+}
+
+.top_nav .right_side > i {
+  margin: 0 1rem;
+}
+
+.top_nav .right_side .cart_btn {
+  cursor: pointer;
+}
+
+.top_nav .right_side .cart_btn i {
+  font-size: 1.8rem;
+}
+
+.top_nav .right_side .cart_btn .total_cart_items {
+  background-color: #ef1e1e;
+  border-radius: 100%;
+  padding: 0.1rem 0.3rem;
+  margin: 0.5rem 0 0 -0.5rem;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bolder;
+}
+
+/* Top Nav Styling End */
+/*# sourceMappingURL=App.css.map */

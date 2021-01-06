@@ -1,0 +1,92 @@
+/* Topbar Styling Start */
+.topbar {
+  background-color: $dark-blue;
+  color: $pure;
+  padding: 0.4rem 3.125rem;
+  font-size: $text3;
+
+  .icons a {
+    color: $pure;
+    margin-right: 0.6rem;
+  }
+
+  .auth > div a {
+    color: $pure;
+    text-decoration: none;
+    margin-left: 0.35rem;
+  }
+
+  .auth .divider {
+    padding: 0 1rem;
+  }
+}
+/* Topbar Styling End */
+
+/* Top Nav Styling Start */
+.top_nav {
+  background-color: $pure;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid $light-border;
+
+  i {
+    color: $dark-blue;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .contact_info {
+    i {
+      margin-right: 0.8rem;
+    }
+  }
+
+  .logo img {
+    width: 160px;
+    height: 40px;
+  }
+
+  .right_side {
+    .search {
+      position: relative;
+      padding-right: 1rem;
+
+      input {
+        width: 250px;
+        height: 40px;
+        border-radius: 50px;
+        outline: none;
+        padding: 0 2.2rem;
+        border: 2px solid $light-border;
+        background-color: $light;
+      }
+      i {
+        position: absolute;
+        left: 0.8rem;
+        color: $dark-gray;
+      }
+    }
+
+    > i {
+      margin: 0 1rem;
+    }
+
+    .cart_btn {
+      cursor: pointer;
+      i {
+        font-size: 1.8rem;
+      }
+      .total_cart_items {
+        background-color: $light-red;
+        border-radius: 100%;
+        padding: 0.1rem 0.3rem;
+        margin: 0.5rem 0 0 -0.5rem;
+        color: $pure;
+        font-size: $text4;
+        font-weight: bolder;
+      }
+    }
+  }
+}
+/* Top Nav Styling End */

@@ -5,10 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Moderno Furniture</title>
 
+    <!-- Font Awesome CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+
     <!-- External CSS -->
     <link rel="stylesheet" href="./CSS/App.css" />
   </head>
   <body>
+    <!-- ---------------------------------------- Header Start ---------------------------------------- -->
+    <header>
+      <!-- Topbar Start -->
+      <div class="topbar container flex justify-between align-center">
+        <div class="icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/anjanKoradia" target="_blank"
+            ><i class="fab fa-github-alt"></i
+          ></a>
+        </div>
+        <div class="auth flex align-center">
+          <div>
+            <i class="fas fa-user"></i>
+            <a href="#">Login</a>
+          </div>
+          <span class="divider">|</span>
+          <div>
+            <i class="fas fa-sign-in-alt"></i>
+            <a href="#">Sing In</a>
+          </div>
+        </div>
+      </div>
+      <!-- Topbar End -->
+
+      <!-- Top Nav Start -->
+      <div class="top_nav">
+        <div class="container flex justify-between align-center">
+          <div class="hamburger" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+          </div>
+          <div class="contact_info flex align-center">
+            <i class="fas fa-2x fa-headset"></i>
+            <div>
+              <h5>Call Us: (+91) 123 456 7890</h5>
+              <h6>E-mail : support@modernoFurniture.com</h6>
+            </div>
+          </div>
+          <div class="logo">
+            <img src="./Assets/logo.png" alt="" />
+          </div>
+          <div class="right_side flex justify-between align-center">
+            <div class="search flex align-center">
+              <input type="text" placeholder="Enter your search key ..." />
+              <i class="fas fa-search"></i>
+            </div>
+            <i class="fas fa-2x fa-user-circle"></i>
+            <div onclick="toggleCart()" class="cart_btn flex align-center">
+              <a href="#"><i class="fas fa-shopping-basket"></i></a>
+              <p class="total_cart_items">0</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Top Nav Start -->
+    </header>
+    <!-- ---------------------------------------- Header End ---------------------------------------- -->
+
     <!-- External JS -->
     <script src="./JS/App.js"></script>
   </body>

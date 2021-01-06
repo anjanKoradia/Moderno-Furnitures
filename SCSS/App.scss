@@ -1,0 +1,64 @@
+/* Font Family */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+// ---------------------------------------- Variables Start ----------------------------------------
+$dark-red: #cf2829;
+$light-red: #ef1e1e;
+$dark-blue: #253237;
+$dark-gray: #666666;
+// $light-gray: #888888;
+
+$light: #f6f5f5;
+$pure: white;
+$dark: black;
+
+$light-border: rgb(231, 219, 219);
+
+$text1: 1.5rem; /* 24px */
+$text2: 1.125rem; /* 18px */
+$text3: 0.875rem; /* 14px */
+$text4: 0.75rem; /* 12px */
+$text5: 0.5rem; /* 8px */
+
+// ---------------------------------------- Variables End ----------------------------------------
+
+// ---------------------------------------- Utility class Start ----------------------------------------
+.container {
+  width: 100%;
+  padding: 0 3.125rem;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.align-center {
+  align-items: center;
+}
+
+// ---------------------------------------- Utility Class End ----------------------------------------
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+@import "./header";
