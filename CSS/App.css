@@ -204,4 +204,107 @@ body {
 }
 
 /* Navbar Styling End */
+/* Hero Section Styling Start */
+.hero {
+  background: url("../Assets/hero-slider1.jpg") center/cover no-repeat;
+  width: 100%;
+  height: calc(100vh - 145px);
+  -webkit-animation: slider 9s infinite linear;
+          animation: slider 9s infinite linear;
+}
+
+.hero .slide_Content {
+  -webkit-box-flex: 0.4;
+      -ms-flex: 0.4;
+          flex: 0.4;
+}
+
+.hero .slide_Content h1 {
+  font-size: 3rem;
+  font-weight: normal;
+  color: #253237;
+}
+
+.hero .slide_Content h1:nth-child(2) {
+  font-weight: bolder;
+}
+
+.hero .slide_Content p {
+  margin: 1rem 0 2.5rem 0;
+  font-size: 1.125rem;
+}
+
+.hero .slide_Content a {
+  background-color: #ef1e1e;
+  border: 2px solid #ef1e1e;
+  border-radius: 50px;
+  outline: none;
+  padding: 0.6rem 1.5rem;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.hero .slide_Content a:hover {
+  background-color: #253237;
+  border: 2px solid #253237;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.hero .fixed_cart_btn {
+  position: fixed;
+  left: -150px;
+  top: 50%;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  z-index: 5;
+}
+
+.hero .fixed_cart_btn p {
+  background-color: #253237;
+  border: 2px solid #253237;
+  outline: none;
+  padding: 0.4rem;
+  color: white;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-orientation: upright;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.hero .fixed_cart_btn p:hover {
+  background-color: #ef1e1e;
+  border: 2px solid #ef1e1e;
+}
+
+@-webkit-keyframes slider {
+  0% {
+    background: url("../Assets/hero-slider1.jpg") center/cover no-repeat;
+  }
+  35% {
+    background: url("../Assets/hero-slider2.jpg") center/cover no-repeat;
+  }
+  75% {
+    background: url("../Assets/hero-slider3.jpg") center/cover no-repeat;
+  }
+}
+
+@keyframes slider {
+  0% {
+    background: url("../Assets/hero-slider1.jpg") center/cover no-repeat;
+  }
+  35% {
+    background: url("../Assets/hero-slider2.jpg") center/cover no-repeat;
+  }
+  75% {
+    background: url("../Assets/hero-slider3.jpg") center/cover no-repeat;
+  }
+}
+
+/* Hero Section Styling End */
 /*# sourceMappingURL=App.css.map */

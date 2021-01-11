@@ -1,0 +1,81 @@
+/* Hero Section Styling Start */
+.hero {
+  background: url("../Assets/hero-slider1.jpg") center/cover no-repeat;
+  width: 100%;
+  height: calc(100vh - 145px);
+  animation: slider 9s infinite linear;
+
+  .slide_Content {
+    flex: 0.4;
+    h1 {
+      font-size: 3rem;
+      font-weight: normal;
+      color: $dark-blue;
+
+      &:nth-child(2) {
+        font-weight: bolder;
+      }
+    }
+
+    p {
+      margin: 1rem 0 2.5rem 0;
+      font-size: $text2;
+    }
+
+    a {
+      background-color: $light-red;
+      border: 2px solid $light-red;
+      border-radius: 50px;
+      outline: none;
+      padding: 0.6rem 1.5rem;
+      color: $pure;
+      font-weight: bold;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $dark-blue;
+        border: 2px solid $dark-blue;
+        transition: $transition;
+      }
+    }
+  }
+
+  .fixed_cart_btn {
+    position: fixed;
+    left: -150px;
+    top: 50%;
+    transition: $transition;
+    z-index: 5;
+
+    p {
+      background-color: $dark-blue;
+      border: 2px solid $dark-blue;
+      outline: none;
+      padding: 0.4rem;
+      color: $pure;
+      transition: $transition;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      cursor: pointer;
+      font-size: $text3;
+
+      &:hover {
+        background-color: $light-red;
+        border: 2px solid $light-red;
+      }
+    }
+  }
+}
+@keyframes slider {
+  0% {
+    background: url("../Assets/hero-slider1.jpg") center/cover no-repeat;
+  }
+  35% {
+    background: url("../Assets/hero-slider2.jpg") center/cover no-repeat;
+  }
+  75% {
+    background: url("../Assets/hero-slider3.jpg") center/cover no-repeat;
+  }
+}
+
+/* Hero Section Styling End */
