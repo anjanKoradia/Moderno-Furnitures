@@ -307,4 +307,18 @@ body {
 }
 
 /* Hero Section Styling End */
+/* Banner Panal 1 Styling Start */
+.banner_panal_1 {
+  margin: 3rem 0;
+}
+
+.banner_panal_1 .banner {
+  margin: 0 1rem;
+}
+
+.banner_panal_1 .banner img {
+  width: 100%;
+}
+
+/* Banner Panal 1 Styling End */
 /*# sourceMappingURL=App.css.map */
