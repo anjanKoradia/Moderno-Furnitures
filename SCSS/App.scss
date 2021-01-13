@@ -12,7 +12,7 @@ $pure: white;
 $dark: black;
 $light-border: rgb(231, 219, 219);
 
-$transition: all 0.3s linear;
+$transition: all 0.4s linear;
 
 $text1: 1.5rem;
 $text2: 1.125rem;
@@ -50,6 +50,24 @@ $text5: 0.5rem;
   align-items: center;
 }
 
+.titel {
+  text-align: center;
+  .t1 {
+    font-size: $text1;
+    color: $dark-blue;
+    margin-bottom: 0.5rem;
+  }
+  .t3 {
+    font-size: $text3;
+    color: $dark-gray;
+  }
+  hr {
+    width: 50px;
+    margin: 2rem auto;
+    border: 1px solid $light-red;
+  }
+}
+
 // ---------------------------------------- Utility Class End ----------------------------------------
 
 * {
@@ -70,3 +88,4 @@ body {
 @import "./navbar";
 @import "./hero";
 @import "./banner";
+@import "./categorys";

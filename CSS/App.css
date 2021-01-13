@@ -40,6 +40,27 @@
           align-items: center;
 }
 
+.titel {
+  text-align: center;
+}
+
+.titel .t1 {
+  font-size: 1.5rem;
+  color: #253237;
+  margin-bottom: 0.5rem;
+}
+
+.titel .t3 {
+  font-size: 0.875rem;
+  color: #666666;
+}
+
+.titel hr {
+  width: 50px;
+  margin: 2rem auto;
+  border: 1px solid #ef1e1e;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -161,8 +182,8 @@ body {
   color: var(--primary-text);
   font-weight: bold;
   padding: 0.8rem 1.5rem;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
   border-bottom: 3px solid transparent;
 }
 
@@ -248,16 +269,16 @@ body {
 .hero .slide_Content a:hover {
   background-color: #253237;
   border: 2px solid #253237;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
 }
 
 .hero .fixed_cart_btn {
   position: fixed;
   left: -150px;
   top: 50%;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
   z-index: 5;
 }
 
@@ -267,8 +288,8 @@ body {
   outline: none;
   padding: 0.4rem;
   color: white;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
@@ -321,4 +342,106 @@ body {
 }
 
 /* Banner Panal 1 Styling End */
+/* Banner Panal 2 Styling Start */
+.banner_panal_2 img {
+  width: 100%;
+  height: 300px;
+  margin: 5rem 0;
+}
+
+/* Banner Panal 2 Styling End */
+/* Popular Category Styling Start */
+.popular_category_container {
+  padding: 5rem 0;
+}
+
+.popular_category_container .popular_category {
+  position: relative;
+}
+
+.popular_category_container .popular_category:hover > button {
+  display: block !important;
+}
+
+.popular_category_container .popular_category > button {
+  display: none !important;
+  background-color: white;
+  border: 2px solid #e7dbdb;
+  border-radius: 100%;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  outline: none;
+  color: #666666;
+  z-index: 1;
+  position: absolute;
+  top: 40%;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+
+.popular_category_container .popular_category > button:hover {
+  background-color: #ef1e1e;
+  color: white;
+}
+
+.popular_category_container .popular_category .category_prev_btn {
+  left: 2.5%;
+}
+
+.popular_category_container .popular_category .category_next_btn {
+  right: 2.5%;
+}
+
+.popular_category_container .popular_category .category_slider_container .category_card {
+  margin: 0 1rem;
+  outline: none;
+}
+
+.popular_category_container .popular_category .category_slider_container .category_card:hover .product_img img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+
+.popular_category_container .popular_category .category_slider_container .category_card .product_img {
+  overflow: hidden;
+  border: 1px solid #e7dbdb;
+}
+
+.popular_category_container .popular_category .category_slider_container .category_card .product_img img {
+  width: 100%;
+  height: 300px;
+  margin: 1rem auto;
+}
+
+.popular_category_container .popular_category .category_slider_container .category_card .details h2 {
+  font-size: 1.125rem;
+  margin-top: 1rem;
+  color: #253237;
+}
+
+.popular_category_container .popular_category .category_slider_container .category_card .details p {
+  margin: 0.5rem 0;
+  color: #666666;
+}
+
+.popular_category_container .popular_category .category_slider_container .category_card > a {
+  text-decoration: none;
+  color: #253237;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+  outline: none;
+}
+
+.popular_category_container .popular_category .category_slider_container .category_card > a i {
+  color: #ef1e1e;
+}
+
+.popular_category_container .popular_category .category_slider_container .category_card > a:hover {
+  color: #cf2829;
+  margin-left: 0.5rem;
+}
+
+/* Popular Category Styling End */
 /*# sourceMappingURL=App.css.map */
