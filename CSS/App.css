@@ -61,6 +61,15 @@
   border: 1px solid #ef1e1e;
 }
 
+.tag {
+  font-size: 0.75rem;
+  color: white;
+  border-radius: 5px;
+  padding: 0.1rem 0.3rem;
+  background-color: #cf2829;
+  font-weight: bold;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -444,4 +453,118 @@ body {
 }
 
 /* Popular Category Styling End */
+/*  New Arrivals Section Styling Start */
+.new_arrival_container {
+  padding: 5rem 0;
+}
+
+.new_arrival_container .new_arrivals {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(210px, 210px))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(210px, 210px));
+  grid-column-gap: 1.2rem;
+  grid-row-gap: 2.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.new_arrival_container .new_arrivals .arrival_product_card {
+  border: 1px solid #e7dbdb;
+  width: 210px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.new_arrival_container .new_arrivals .arrival_product_card .arrival_product_img {
+  position: relative;
+}
+
+.new_arrival_container .new_arrivals .arrival_product_card .arrival_product_img span {
+  background-color: #ef1e1e;
+  position: absolute;
+  margin: 0.5rem;
+  z-index: 1;
+}
+
+.new_arrival_container .new_arrivals .arrival_product_card .arrival_product_img img {
+  width: 100%;
+}
+
+.new_arrival_container .new_arrivals .arrival_product_card .arrival_product_img button {
+  position: absolute;
+  -webkit-transform: translate(0%, 620%);
+          transform: translate(0%, 620%);
+  background-color: #ef1e1e;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 0.875rem;
+  padding: 0.4rem;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+  cursor: pointer;
+}
+
+.new_arrival_container .new_arrivals .arrival_product_card .arrival_product_img button i {
+  color: white;
+  font-size: 0.875rem;
+  padding-right: 0.5rem;
+  pointer-events: none;
+}
+
+.new_arrival_container .new_arrivals .arrival_product_card .arrival_product_img button:hover {
+  background-color: #253237;
+}
+
+.new_arrival_container .new_arrivals .arrival_product_card .arrival_product_details {
+  text-align: center;
+}
+
+.new_arrival_container .new_arrivals .arrival_product_card .arrival_product_details p {
+  font-size: 0.75rem;
+  color: #666666;
+  text-transform: uppercase;
+  margin: 0.5rem 0;
+}
+
+.new_arrival_container .new_arrivals .arrival_product_card .arrival_product_details .stars {
+  color: orange;
+  margin-bottom: 0.2rem;
+}
+
+.new_arrival_container .new_arrivals .arrival_product_card .arrival_product_details .arrival_product_price {
+  margin-bottom: 1rem;
+}
+
+.new_arrival_container .new_arrivals .arrival_product_card .arrival_product_details .arrival_product_price s {
+  font-size: 0.875rem;
+  color: #666666;
+}
+
+.new_arrival_container .new_arrivals .arrival_product_card .arrival_product_details .arrival_product_price p {
+  color: #cf2829;
+  margin: 0 0.6rem;
+  font-size: 1.125rem;
+}
+
+.new_arrival_container .new_arrivals .arrival_product_card:hover {
+  border-color: #ef1e1e;
+}
+
+.new_arrival_container .new_arrivals .arrival_product_card:hover .arrival_product_img img {
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+}
+
+.new_arrival_container .new_arrivals .arrival_product_card:hover .arrival_product_img button {
+  -webkit-transform: translate(-100%, 620%);
+          transform: translate(-100%, 620%);
+}
+
+/*  New Arrivals Section Styling End */
 /*# sourceMappingURL=App.css.map */

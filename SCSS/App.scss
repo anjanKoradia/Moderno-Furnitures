@@ -68,6 +68,15 @@ $text5: 0.5rem;
   }
 }
 
+.tag {
+  font-size: $text4;
+  color: $pure;
+  border-radius: 5px;
+  padding: 0.1rem 0.3rem;
+  background-color: $dark-red;
+  font-weight: bold;
+}
+
 // ---------------------------------------- Utility Class End ----------------------------------------
 
 * {
@@ -89,3 +98,4 @@ body {
 @import "./hero";
 @import "./banner";
 @import "./categorys";
+@import "./arrivals";

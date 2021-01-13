@@ -1,0 +1,99 @@
+/*  New Arrivals Section Styling Start */
+.new_arrival_container {
+  padding: 5rem 0;
+  .new_arrivals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 210px));
+    grid-column-gap: 1.2rem;
+    grid-row-gap: 2.5rem;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+
+    .arrival_product_card {
+      border: 1px solid $light-border;
+      width: 210px;
+      overflow: hidden;
+      border-radius: 5px;
+
+      .arrival_product_img {
+        position: relative;
+
+        span {
+          background-color: $light-red;
+          position: absolute;
+          margin: 0.5rem;
+          z-index: 1;
+        }
+        img {
+          width: 100%;
+        }
+        button {
+          position: absolute;
+          transform: translate(0%, 620%);
+          background-color: $light-red;
+          border: none;
+          outline: none;
+          color: $pure;
+          font-size: $text3;
+          padding: 0.4rem;
+          transition: $transition;
+          cursor: pointer;
+
+          i {
+            color: $pure;
+            font-size: $text3;
+            padding-right: 0.5rem;
+            pointer-events: none;
+          }
+
+          &:hover {
+            background-color: $dark-blue;
+          }
+        }
+      }
+
+      .arrival_product_details {
+        text-align: center;
+
+        p {
+          font-size: $text4;
+          color: $dark-gray;
+          text-transform: uppercase;
+          margin: 0.5rem 0;
+        }
+        .stars {
+          color: orange;
+          margin-bottom: 0.2rem;
+        }
+        .arrival_product_price {
+          margin-bottom: 1rem;
+
+          s {
+            font-size: $text3;
+            color: $dark-gray;
+          }
+          p {
+            color: $dark-red;
+            margin: 0 0.6rem;
+            font-size: $text2;
+          }
+        }
+      }
+
+      &:hover {
+        border-color: $light-red;
+
+        .arrival_product_img {
+          img {
+            filter: blur(2px);
+          }
+          button {
+            transform: translate(-100%, 620%);
+          }
+        }
+      }
+    }
+  }
+}
+/*  New Arrivals Section Styling End */
