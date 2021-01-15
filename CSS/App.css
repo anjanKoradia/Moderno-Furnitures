@@ -358,6 +358,19 @@ body {
 }
 
 /* Banner Panal 2 Styling End */
+/* Banner Panal 3 Styling Start */
+.banner_panal_3 {
+  margin: 5rem 0;
+}
+
+.banner_panal_3 .banner {
+  margin: 0 1rem;
+}
+
+.banner_panal_3 .banner img {
+  width: 100%;
+}
+
 /* Popular Category Styling Start */
 .popular_category_container {
   padding: 5rem 0;
