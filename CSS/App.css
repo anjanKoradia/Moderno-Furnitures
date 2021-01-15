@@ -566,4 +566,33 @@ body {
 }
 
 /*  New Arrivals Section Styling End */
+.services .service_detail {
+  width: 350px;
+  text-align: center;
+  border: 2px solid black;
+  padding: 2rem;
+  margin: 0 1rem;
+  border: 1px solid #e7dbdb;
+  border-radius: 5px;
+  color: #253237;
+  outline: none;
+  -webkit-transform: all 0.4s linear;
+          transform: all 0.4s linear;
+}
+
+.services .service_detail h3 {
+  margin: 1rem 0;
+}
+
+.services .service_detail i {
+  color: #666666;
+}
+
+.services .service_detail:hover {
+  border-color: #ef1e1e;
+}
+
+.services .service_detail:hover i {
+  color: #ef1e1e;
+}
 /*# sourceMappingURL=App.css.map */
