@@ -881,4 +881,58 @@ body {
 }
 
 /*  Products Page Styling End */
+/*  Blog Page Styling Start */
+.blog_container .blog .blog_card {
+  margin: 0 1rem;
+  height: 400px;
+  width: 100%;
+}
+
+.blog_container .blog .blog_card .read_more a {
+  text-decoration: none;
+  color: #253237;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+
+.blog_container .blog .blog_card .read_more a:hover {
+  margin-left: 0.5rem;
+  color: #ef1e1e;
+}
+
+.blog_container .blog .blog_card .read_more i {
+  color: #ef1e1e;
+}
+
+.blog_container .blog .blog_card:hover .blog_img img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+
+.blog_container .blog .blog_img {
+  overflow: hidden;
+  width: 100%;
+  height: 70%;
+}
+
+.blog_container .blog .blog_img img {
+  width: 100%;
+  height: 100%;
+}
+
+.blog_container .blog .blog_details h3 {
+  color: #253237;
+  margin: 1rem 0;
+}
+
+.blog_container .blog .blog_details p {
+  color: #666666;
+  font-size: 0.875rem;
+  margin: 1rem 0;
+  text-align: justify;
+}
+
+/*  Blog Page Styling End */
 /*# sourceMappingURL=App.css.map */
