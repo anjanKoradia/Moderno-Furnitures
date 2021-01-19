@@ -1,28 +1,32 @@
-.services {
-  .service_detail {
-    width: 350px;
-    text-align: center;
-    border: 2px solid black;
-    padding: 2rem;
-    margin: 0 1rem;
-    border: 1px solid $light-border;
-    border-radius: 5px;
-    color: $dark-blue;
-    outline: none;
-    transform: $transition;
+.services_container {
+  padding: 5rem 0;
 
-    h3 {
-      margin: 1rem 0;
-    }
-    i {
-      color: $dark-gray;
-    }
+  .services {
+    .service_detail {
+      width: 350px;
+      text-align: center;
+      border: 2px solid black;
+      padding: 2rem;
+      margin: 0 1rem;
+      border: 1px solid $light-border;
+      border-radius: 5px;
+      color: $dark-blue;
+      outline: none;
+      transform: $transition;
 
-    &:hover {
-      border-color: $light-red;
-
+      h3 {
+        margin: 1rem 0;
+      }
       i {
-        color: $light-red;
+        color: $dark-gray;
+      }
+
+      &:hover {
+        border-color: $light-red;
+
+        i {
+          color: $light-red;
+        }
       }
     }
   }

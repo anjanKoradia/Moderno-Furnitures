@@ -1,150 +1,153 @@
 /*  Hot Deals Page Styling End */
+.hotDeal_container {
+  padding: 5rem 0;
 
-.hot_deals {
-  border: 2px solid $dark-blue;
-  border-radius: 10px;
-  width: 95%;
-  margin: auto;
-  padding: 7rem 0 3rem 0;
-  position: relative;
+  .hot_deals {
+    border: 2px solid $dark-blue;
+    border-radius: 10px;
+    width: 95%;
+    margin: auto;
+    padding: 7rem 0 3rem 0;
+    position: relative;
 
-  .slick_btn {
-    position: absolute;
-    top: 50%;
-  }
-  .prev_btn {
-    left: 2.8%;
-  }
-  .next_btn {
-    right: 2.8%;
-  }
-
-  .timer {
-    position: absolute;
-    background-color: $pure;
-    padding: 0.6rem 1.5rem;
-    top: -9%;
-    left: 5%;
-
-    h2 {
-      text-transform: uppercase;
+    .slick_btn {
+      position: absolute;
+      top: 50%;
     }
-    .timer_container {
-      margin-left: 2rem;
-      border-radius: 50px;
-      background-color: $dark-blue;
+    .prev_btn {
+      left: 2.8%;
+    }
+    .next_btn {
+      right: 2.8%;
+    }
+
+    .timer {
+      position: absolute;
+      background-color: $pure;
       padding: 0.6rem 1.5rem;
-      > div {
-        text-align: center;
-      }
+      top: -9%;
+      left: 5%;
+
       h2 {
-        font-size: $text2;
-        color: $pure;
+        text-transform: uppercase;
       }
-      p {
-        font-size: $text4;
-        color: $dark-blue;
-        text-transform: capitalize;
-        color: $pure;
+      .timer_container {
+        margin-left: 2rem;
+        border-radius: 50px;
+        background-color: $dark-blue;
+        padding: 0.6rem 1.5rem;
+        > div {
+          text-align: center;
+        }
+        h2 {
+          font-size: $text2;
+          color: $pure;
+        }
+        p {
+          font-size: $text4;
+          color: $dark-blue;
+          text-transform: capitalize;
+          color: $pure;
+        }
+        span {
+          font-size: $text1;
+          margin: 0 0.8rem;
+          color: $pure;
+        }
       }
-      span {
-        font-size: $text1;
-        margin: 0 0.8rem;
+    }
+
+    .slick_btn {
+      display: none !important;
+      border: 2px solid $light;
+      background-color: $pure;
+      border-radius: 100%;
+      padding: 1rem 1.2rem;
+      text-align: center;
+      outline: none;
+      color: $dark-blue;
+      transition: $transition;
+      z-index: 1;
+
+      &:hover {
+        background-color: $light-red;
         color: $pure;
       }
     }
-  }
-
-  .slick_btn {
-    display: none !important;
-    border: 2px solid $light;
-    background-color: $pure;
-    border-radius: 100%;
-    padding: 1rem 1.2rem;
-    text-align: center;
-    outline: none;
-    color: $dark-blue;
-    transition: $transition;
-    z-index: 1;
 
     &:hover {
-      background-color: $light-red;
-      color: $pure;
+      .slick_btn {
+        display: block !important;
+      }
     }
-  }
 
-  &:hover {
-    .slick_btn {
-      display: block !important;
-    }
-  }
+    .hot_deal_slider {
+      .hot_deal_cards {
+        padding: 0 1rem;
+        outline: none;
+        overflow: hidden;
 
-  .hot_deal_slider {
-    .hot_deal_cards {
-      padding: 0 1rem;
-      outline: none;
-      overflow: hidden;
-
-      .deal_product_card {
-        border: 2px solid $light;
-        border-radius: 5px;
-        transition: $transition;
-
-        .deal_card_img {
-          position: relative;
-
-          span {
-            position: absolute;
-            padding: 0.4rem 0.8rem;
-            border-radius: 0;
-            top: 1%;
-            left: 1%;
-          }
-          img {
-            height: 300px;
-          }
-        }
-
-        .deal_card_details {
-          width: 100%;
-          margin: auto;
-          text-align: center;
-          color: $dark-blue;
-
-          > p {
-            color: $dark-gray !important;
-            font-size: $text2;
-            text-transform: uppercase;
-            margin: 1rem 0 !important;
-          }
-
-          .stars {
-            font-size: $text1;
-            color: orange;
-            margin: 0.5rem 0;
-          }
-
-          .deal_item_price {
-            margin-bottom: 1rem;
-
-            s {
-              font-size: $text2;
-              color: $dark-gray;
-            }
-            p {
-              color: $dark-red;
-              margin: 0 0.6rem;
-              font-size: $text1;
-            }
-          }
-        }
-
-        &:hover {
-          border-color: $light-red;
+        .deal_product_card {
+          border: 2px solid $light;
+          border-radius: 5px;
+          transition: $transition;
 
           .deal_card_img {
+            position: relative;
+
+            span {
+              position: absolute;
+              padding: 0.4rem 0.8rem;
+              border-radius: 0;
+              top: 1%;
+              left: 1%;
+            }
             img {
-              filter: blur(2px);
+              height: 300px;
+            }
+          }
+
+          .deal_card_details {
+            width: 100%;
+            margin: auto;
+            text-align: center;
+            color: $dark-blue;
+
+            > p {
+              color: $dark-gray !important;
+              font-size: $text2;
+              text-transform: uppercase;
+              margin: 1rem 0 !important;
+            }
+
+            .stars {
+              font-size: $text1;
+              color: orange;
+              margin: 0.5rem 0;
+            }
+
+            .deal_item_price {
+              margin-bottom: 1rem;
+
+              s {
+                font-size: $text2;
+                color: $dark-gray;
+              }
+              p {
+                color: $dark-red;
+                margin: 0 0.6rem;
+                font-size: $text1;
+              }
+            }
+          }
+
+          &:hover {
+            border-color: $light-red;
+
+            .deal_card_img {
+              img {
+                filter: blur(2px);
+              }
             }
           }
         }
@@ -152,5 +155,4 @@
     }
   }
 }
-
 /*  Hot Deals Page Styling End */
