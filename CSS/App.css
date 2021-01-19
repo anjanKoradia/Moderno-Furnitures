@@ -85,6 +85,20 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f6f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ef1e1e;
+  border-radius: 5px;
+  height: 200px;
+}
+
 /* Topbar Styling Start */
 .topbar {
   background-color: #253237;
