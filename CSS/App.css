@@ -884,7 +884,6 @@ body {
 /*  Blog Page Styling Start */
 .blog_container .blog .blog_card {
   margin: 0 1rem;
-  height: 400px;
   width: 100%;
 }
 
@@ -914,7 +913,7 @@ body {
 .blog_container .blog .blog_img {
   overflow: hidden;
   width: 100%;
-  height: 70%;
+  height: 60%;
 }
 
 .blog_container .blog .blog_img img {
@@ -935,4 +934,136 @@ body {
 }
 
 /*  Blog Page Styling End */
+/*  Footer Styling Start */
+.footer {
+  background-color: #f6f5f5;
+  margin-top: 4rem;
+}
+
+.footer .footer_top {
+  padding: 1.5rem 0;
+}
+
+.footer .footer_top .logo img {
+  width: 180px;
+  height: 50px;
+}
+
+.footer .footer_top .social_media i {
+  padding: 0 1rem;
+  color: #253237;
+  font-size: 1.5rem;
+}
+
+.footer .footer_top .social_media i:hover {
+  color: #cf2829;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+
+.footer .footer_center {
+  padding: 2rem 0;
+  border-top: 1px solid #e7dbdb;
+  border-bottom: 1px solid #e7dbdb;
+}
+
+.footer .footer_center > div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100%;
+}
+
+.footer .footer_center > div h4 {
+  font-size: 1.125rem;
+  padding: 0.5rem 0;
+  color: #253237;
+}
+
+.footer .footer_center p {
+  color: #666666;
+  font-size: 0.875rem;
+}
+
+.footer .footer_center ul li {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+
+.footer .footer_center ul li a {
+  text-decoration: none;
+  font-size: 0.875rem;
+  color: #666666;
+}
+
+.footer .footer_center ul li:hover a {
+  color: black;
+  -webkit-transform: all 0.4s linear;
+          transform: all 0.4s linear;
+}
+
+.footer .footer_center .newsletter p {
+  margin: 1.5rem 0;
+  text-align: justify;
+}
+
+.footer .footer_center .newsletter .store {
+  margin-top: 1rem;
+}
+
+.footer .footer_center .newsletter .store img {
+  width: 100px;
+}
+
+.footer .footer_center .newsletter input {
+  width: 300px;
+  padding: 0.8rem 1rem;
+  outline: none;
+  border: none;
+}
+
+.footer .footer_center .newsletter button {
+  padding: 0.8rem 1rem;
+  border: none;
+  outline: none;
+  background-color: #253237;
+  color: white;
+}
+
+.footer .footer_bottom {
+  padding: 1.5rem 0;
+}
+
+.footer .footer_bottom .copy_write a {
+  text-decoration: none;
+  color: #cf2829;
+}
+
+.footer .footer_bottom .payment i {
+  padding: 0 1rem;
+  color: #253237;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+
+.footer .footer_bottom .payment i:hover {
+  color: #cf2829;
+}
+
+/*  Footer Styling End */
+.scrolltop i {
+  display: none;
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  border: none;
+  color: white;
+  background: #cf2829;
+  padding: 10px;
+  border-radius: 100px;
+}
+
+.scrolltop i:hover {
+  background: #253237;
+}
 /*# sourceMappingURL=App.css.map */

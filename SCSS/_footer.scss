@@ -1,0 +1,129 @@
+/*  Footer Styling Start */
+.footer {
+  background-color: $light;
+  margin-top: 4rem;
+  .footer_top {
+    padding: 1.5rem 0;
+
+    .logo {
+      img {
+        width: 180px;
+        height: 50px;
+      }
+    }
+    .social_media {
+      i {
+        padding: 0 1rem;
+        color: $dark-blue;
+        font-size: $text1;
+
+        &:hover {
+          color: $dark-red;
+          transition: $transition;
+        }
+      }
+    }
+  }
+
+  .footer_center {
+    padding: 2rem 0;
+    border-top: 1px solid $light-border;
+    border-bottom: 1px solid $light-border;
+    > div {
+      flex: 1;
+      height: 100%;
+      h4 {
+        font-size: $text2;
+        padding: 0.5rem 0;
+        color: $dark-blue;
+      }
+    }
+
+    p {
+      color: $dark-gray;
+      font-size: $text3;
+    }
+    ul {
+      li {
+        list-style: none;
+        margin: 0.5rem 0;
+        a {
+          text-decoration: none;
+          font-size: $text3;
+          color: $dark-gray;
+        }
+        &:hover a {
+          color: $dark;
+          transform: $transition;
+        }
+      }
+    }
+    .newsletter {
+      p {
+        margin: 1.5rem 0;
+        text-align: justify;
+      }
+      .store {
+        margin-top: 1rem;
+        img {
+          width: 100px;
+        }
+      }
+      input {
+        width: 300px;
+        padding: 0.8rem 1rem;
+        outline: none;
+        border: none;
+      }
+      button {
+        padding: 0.8rem 1rem;
+        border: none;
+        outline: none;
+        background-color: $dark-blue;
+        color: $pure;
+      }
+    }
+  }
+
+  .footer_bottom {
+    padding: 1.5rem 0;
+
+    .copy_write {
+      a {
+        text-decoration: none;
+        color: $dark-red;
+      }
+    }
+    .payment {
+      i {
+        padding: 0 1rem;
+        color: $dark-blue;
+        transition: $transition;
+
+        &:hover {
+          color: $dark-red;
+        }
+      }
+    }
+  }
+}
+
+/*  Footer Styling End */
+
+.scrolltop {
+  i {
+    display: none;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    border: none;
+    color: white;
+    background: $dark-red;
+    padding: 10px;
+    border-radius: 100px;
+
+    &:hover {
+      background: $dark-blue;
+    }
+  }
+}
