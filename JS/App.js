@@ -1,3 +1,106 @@
+let productsContainer = document.querySelector(".products");
+let arrivalsContainer = document.querySelector(".new_arrivals");
+let dealContainer = document.querySelector(".hot_deal_slider");
+let cartSection = document.querySelector("#cartSection");
+let cartContent = document.querySelector(".cart_content");
+let cartTotal = document.querySelector(".cart_total_price");
+let cartItems = document.querySelector(".total_cart_items");
+let clearCartBtn = document.querySelector(".clear_cart_btn");
+
+class Products {
+  async getArrival() {
+    try {
+      let arrival_data = await fetch("../Data/newArrivals.json");
+      let result = await arrival_data.json();
+      return result;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async getProducts() {
+    try {
+      let product_data = await fetch("../Data/products.json");
+      let result = await product_data.json();
+      return result;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
+
+class UI {
+  displayArrivals(products) {
+    let result = "";
+    products.forEach((product) => {
+      result += `
+      <div class="arrival_product_card">
+        <div class="arrival_product_img">
+          <span class="tag">New</span>
+          <img src="${product.image}" alt="" />
+          <button class = "AddToCart" data-id=${product.id}>
+            <i class="fas fa-shopping-cart"></i>
+            ADD TO CART
+          </button>
+        </div>
+        <div class="arrival_product_details">
+          <p>${product.category}</p>
+          <h4>${product.name}</h4>
+          <h3 class="stars">${product.rating}</h3>
+          <div class="arrival_product_price flex align-center justify-center">
+            <s>&#x20b9;${product.price.orignal}</s>
+            <p>&#x20b9;${product.price.current}</p>
+            <span class="tag">${product.price.discount}</span>
+          </div>
+        </div>
+      </div>
+      `;
+    });
+    arrivalsContainer.innerHTML = result;
+  }
+
+  displayProducts(products) {
+    let result = "";
+    products.forEach((product) => {
+      result += `
+      <div class="product_card">
+        <div class="product_img">
+          <img src=${product.image} alt="" />
+          <button class = "AddToCart" data-id=${product.id}>
+            <i class="fas fa-shopping-cart"></i>
+            ADD TO CART
+          </button>
+        </div>
+        <div class="product_details">
+          <p>${product.category}</p>
+          <h4>${product.name}</h4>
+          <h3 class="stars">${product.rating}</h3>
+          <div class="product_item_price flex align-center justify-center">
+            <s>&#x20b9;${product.price.orignal}</s>
+            <p>&#x20b9;${product.price.current}</p>
+            <span class="tag">${product.price.discount}</span>
+          </div>
+        </div>
+      </div>
+      `;
+    });
+    productsContainer.innerHTML = result;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const products = new Products();
+  const ui = new UI();
+
+  products.getArrival().then((products) => {
+    ui.displayArrivals(products);
+  });
+
+  products.getProducts().then((products) => {
+    ui.displayProducts(products);
+  });
+});
+
 // -------------------- Popular Category Section Js Start --------------------
 $(".category_slider_container").slick({
   infinite: true,
@@ -58,7 +161,6 @@ let timer = setInterval(function () {
 // -------------------- Based On Window Scroll Event Start --------------------
 $(window).scroll(function () {
   let scrollTop = $(window).scrollTop();
-  console.log(scrollTop);
 
   // Fixed View Cart Js
   if (scrollTop >= 200 && scrollTop <= 5990) {
@@ -87,7 +189,7 @@ $(window).scroll(function () {
     $("#nav_footer").removeClass("active");
   }
   if (
-    (scrollTop >= 975 && scrollTop <= 2600) ||
+    (scrollTop >= 975 && scrollTop <= 2630) ||
     (scrollTop >= 3670 && scrollTop <= 4400)
   ) {
     $("#nav_home").removeClass("active");
@@ -97,7 +199,7 @@ $(window).scroll(function () {
     $("#nav_blog").removeClass("active");
     $("#nav_footer").removeClass("active");
   }
-  if (scrollTop >= 2610 && scrollTop <= 3660) {
+  if (scrollTop >= 2640 && scrollTop <= 3660) {
     $("#nav_home").removeClass("active");
     $("#nav_shop").removeClass("active");
     $("#nav_service").addClass("active");
@@ -105,7 +207,7 @@ $(window).scroll(function () {
     $("#nav_blog").removeClass("active");
     $("#nav_footer").removeClass("active");
   }
-  if (scrollTop >= 4420 && scrollTop <= 5000) {
+  if (scrollTop >= 4420 && scrollTop <= 6580) {
     $("#nav_home").removeClass("active");
     $("#nav_shop").removeClass("active");
     $("#nav_service").removeClass("active");
@@ -113,7 +215,7 @@ $(window).scroll(function () {
     $("#nav_blog").removeClass("active");
     $("#nav_footer").removeClass("active");
   }
-  if (scrollTop >= 5010 && scrollTop <= 5400) {
+  if (scrollTop >= 6590 && scrollTop <= 7200) {
     $("#nav_home").removeClass("active");
     $("#nav_shop").removeClass("active");
     $("#nav_service").removeClass("active");
@@ -121,7 +223,7 @@ $(window).scroll(function () {
     $("#nav_blog").addClass("active");
     $("#nav_footer").removeClass("active");
   }
-  if (scrollTop >= 5410) {
+  if (scrollTop > 7210) {
     $("#nav_home").removeClass("active");
     $("#nav_shop").removeClass("active");
     $("#nav_service").removeClass("active");

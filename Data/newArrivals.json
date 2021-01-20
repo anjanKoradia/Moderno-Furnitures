@@ -1,0 +1,74 @@
+[
+    {
+        "id": 10,
+        "image": "./Assets/Products_Images/thumb-10.jpg",
+        "category": "home furniture",
+        "name": "Cantilever Chair",
+        "rating": "★★★★★",
+        "price": {
+            "orignal": 1699,
+            "current": 1444,
+            "discount": "-15%"
+        }
+    },
+    {
+        "id": 12,
+        "image": "./Assets/Products_Images/thumb-12.jpg",
+        "category": "bar furniture",
+        "name": "Bar Chair",
+        "rating": "★★★★☆",
+        "price": {
+            "orignal": 829,
+            "current": 449,
+            "discount": "-18%"
+        }
+    },
+    {
+        "id": 15,
+        "image": "./Assets/Products_Images/thumb-15.jpg",
+        "category": "bar furniture",
+        "name": "Glass Shape Lamp",
+        "rating": "★★★★☆",
+        "price": {
+            "orignal": 430,
+            "current": 378,
+            "discount": "-12%"
+        }
+    },
+    {
+        "id": 19,
+        "image": "./Assets/Products_Images/thumb-19.jpg",
+        "category": "home furniture",
+        "name": "Drwaing Room Sofa",
+        "rating": "★★★★☆",
+        "price": {
+            "orignal": 20599,
+            "current": 16067,
+            "discount": "-22%"
+        }
+    },
+    {
+        "id": 20,
+        "image": "./Assets/Products_Images/thumb-20.jpg",
+        "category": "home furniture",
+        "name": "Flower Pot Stool",
+        "rating": "★★★★☆",
+        "price": {
+            "orignal": 329,
+            "current": 300,
+            "discount": "-8%"
+        }
+    },
+    {
+        "id": 28,
+        "image": "./Assets/Products_Images/thumb-28.jpg",
+        "category": "kitchen furniture",
+        "name": "Nosel Lamp",
+        "rating": "★★★★☆",
+        "price": {
+            "orignal": 559,
+            "current": 442,
+            "discount": "-21%"
+        }
+    }
+]
