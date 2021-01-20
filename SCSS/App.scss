@@ -19,7 +19,6 @@ $text2: 1.125rem;
 $text3: 0.875rem;
 $text4: 0.75rem;
 $text5: 0.5rem;
-
 // ---------------------------------------- Variables End ----------------------------------------
 
 // ---------------------------------------- Utility class Start ----------------------------------------
@@ -107,6 +106,7 @@ body {
 
 @import "./header";
 @import "./navbar";
+@import "./cart";
 @import "./hero";
 @import "./banner";
 @import "./categorys";

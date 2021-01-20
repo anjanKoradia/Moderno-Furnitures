@@ -78,7 +78,7 @@ $(window).scroll(function () {
   });
 
   // Add active class on scroll
-  if (scrollTop >= 0 && scrollTop <= 930) {
+  if (scrollTop >= 0 && scrollTop <= 970) {
     $("#nav_home").addClass("active");
     $("#nav_shop").removeClass("active");
     $("#nav_service").removeClass("active");
@@ -87,8 +87,8 @@ $(window).scroll(function () {
     $("#nav_footer").removeClass("active");
   }
   if (
-    (scrollTop >= 930 && scrollTop <= 1955) ||
-    (scrollTop >= 3200 && scrollTop <= 3880)
+    (scrollTop >= 975 && scrollTop <= 2600) ||
+    (scrollTop >= 3670 && scrollTop <= 4400)
   ) {
     $("#nav_home").removeClass("active");
     $("#nav_shop").addClass("active");
@@ -97,7 +97,7 @@ $(window).scroll(function () {
     $("#nav_blog").removeClass("active");
     $("#nav_footer").removeClass("active");
   }
-  if (scrollTop >= 2530 && scrollTop <= 2800) {
+  if (scrollTop >= 2610 && scrollTop <= 3660) {
     $("#nav_home").removeClass("active");
     $("#nav_shop").removeClass("active");
     $("#nav_service").addClass("active");
@@ -105,7 +105,7 @@ $(window).scroll(function () {
     $("#nav_blog").removeClass("active");
     $("#nav_footer").removeClass("active");
   }
-  if (scrollTop >= 3890 && scrollTop <= 4540) {
+  if (scrollTop >= 4420 && scrollTop <= 5000) {
     $("#nav_home").removeClass("active");
     $("#nav_shop").removeClass("active");
     $("#nav_service").removeClass("active");
@@ -113,7 +113,7 @@ $(window).scroll(function () {
     $("#nav_blog").removeClass("active");
     $("#nav_footer").removeClass("active");
   }
-  if (scrollTop >= 4550 && scrollTop <= 5120) {
+  if (scrollTop >= 5010 && scrollTop <= 5400) {
     $("#nav_home").removeClass("active");
     $("#nav_shop").removeClass("active");
     $("#nav_service").removeClass("active");
@@ -121,7 +121,7 @@ $(window).scroll(function () {
     $("#nav_blog").addClass("active");
     $("#nav_footer").removeClass("active");
   }
-  if (scrollTop >= 5130) {
+  if (scrollTop >= 5410) {
     $("#nav_home").removeClass("active");
     $("#nav_shop").removeClass("active");
     $("#nav_service").removeClass("active");
@@ -131,3 +131,8 @@ $(window).scroll(function () {
   }
 });
 // -------------------- Based On Window Scroll Event End --------------------
+
+// -------------------- Toggle shopping cart --------------------
+function toggleCart() {
+  $("#cartSection").toggleClass("activeCart");
+}
