@@ -13,54 +13,9 @@
     .slick_btn {
       position: absolute;
       top: 50%;
-    }
-    .prev_btn {
-      left: 2.8%;
-    }
-    .next_btn {
-      right: 2.8%;
-    }
-
-    .timer {
-      position: absolute;
-      background-color: $pure;
-      padding: 0.6rem 1.5rem;
-      top: -9%;
-      left: 5%;
-
-      h2 {
-        text-transform: uppercase;
-      }
-      .timer_container {
-        margin-left: 2rem;
-        border-radius: 50px;
-        background-color: $dark-blue;
-        padding: 0.6rem 1.5rem;
-        > div {
-          text-align: center;
-        }
-        h2 {
-          font-size: $text2;
-          color: $pure;
-        }
-        p {
-          font-size: $text4;
-          color: $dark-blue;
-          text-transform: capitalize;
-          color: $pure;
-        }
-        span {
-          font-size: $text1;
-          margin: 0 0.8rem;
-          color: $pure;
-        }
-      }
-    }
-
-    .slick_btn {
       display: none !important;
-      border: 2px solid $light;
-      background-color: $pure;
+      border: 2px solid $light-border;
+      background-color: $light;
       border-radius: 100%;
       padding: 1rem 1.2rem;
       text-align: center;
@@ -74,6 +29,47 @@
         color: $pure;
       }
     }
+    .prev_btn {
+      left: 1%;
+    }
+    .next_btn {
+      right: 1%;
+    }
+
+    .timer {
+      position: absolute;
+      background-color: $pure;
+      padding: 0.6rem 1.5rem;
+      top: -10%;
+      left: 5%;
+
+      h3 {
+        text-transform: uppercase;
+      }
+      .timer_container {
+        margin-left: 2rem;
+        border-radius: 50px;
+        background-color: $dark-blue;
+        padding: 0.6rem 1.5rem;
+        > div {
+          text-align: center;
+        }
+        h3 {
+          font-size: $text3;
+          color: $pure;
+        }
+        p {
+          font-size: $text4;
+          text-transform: capitalize;
+          color: $pure;
+        }
+        span {
+          font-size: $text1;
+          margin: 0 0.8rem;
+          color: $pure;
+        }
+      }
+    }
 
     &:hover {
       .slick_btn {
@@ -81,73 +77,72 @@
       }
     }
 
-    .hot_deal_slider {
-      .hot_deal_cards {
-        padding: 0 1rem;
-        outline: none;
-        overflow: hidden;
+    .hot_deal_slider_container {
+      padding: 0 1.5rem;
 
-        .deal_product_card {
-          border: 2px solid $light;
-          border-radius: 5px;
-          transition: $transition;
+      .hot_deal_slider {
+        .hot_deal_cards {
+          padding: 0 1rem;
+          outline: none;
+          overflow: hidden;
 
-          .deal_card_img {
-            position: relative;
-
-            span {
-              position: absolute;
-              padding: 0.4rem 0.8rem;
-              border-radius: 0;
-              top: 1%;
-              left: 1%;
-            }
-            img {
-              height: 300px;
-            }
-          }
-
-          .deal_card_details {
-            width: 100%;
-            margin: auto;
-            text-align: center;
-            color: $dark-blue;
-
-            > p {
-              color: $dark-gray !important;
-              font-size: $text2;
-              text-transform: uppercase;
-              margin: 1rem 0 !important;
-            }
-
-            .stars {
-              font-size: $text1;
-              color: orange;
-              margin: 0.5rem 0;
-            }
-
-            .deal_item_price {
-              margin-bottom: 1rem;
-
-              s {
-                font-size: $text2;
-                color: $dark-gray;
-              }
-              p {
-                color: $dark-red;
-                margin: 0 0.6rem;
-                font-size: $text1;
-              }
-            }
-          }
-
-          &:hover {
-            border-color: $light-red;
+          .deal_product_card {
+            border: 2px solid $light;
+            border-radius: 5px;
+            transition: $transition;
 
             .deal_card_img {
-              img {
-                filter: blur(2px);
+              position: relative;
+
+              span {
+                position: absolute;
+                padding: 0.4rem 0.8rem;
+                border-radius: 0;
+                top: 1%;
+                left: 1%;
               }
+              img {
+                width: 200px;
+                height: 200px !important;
+              }
+            }
+
+            .deal_card_details {
+              width: 100%;
+              margin: auto;
+              text-align: center;
+              color: $dark-blue;
+
+              > p {
+                color: $dark-gray !important;
+                font-size: $text3;
+                text-transform: uppercase;
+                margin: 1rem 0 !important;
+              }
+
+              .stars {
+                font-size: $text2;
+                color: orange;
+                margin: 0.5rem 0;
+              }
+
+              .deal_item_price {
+                margin-bottom: 1rem;
+
+                s {
+                  font-size: $text3;
+                  color: $dark-gray;
+                }
+                p {
+                  color: $dark-red;
+                  margin: 0 0.6rem;
+                  font-size: $text2;
+                }
+              }
+            }
+
+            &:hover {
+              border-color: $light-red;
             }
           }
         }

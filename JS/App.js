@@ -131,7 +131,7 @@ $(".services").slick({
 $(".hot_deal_slider").slick({
   infinite: true,
   speed: 300,
-  slidesToShow: 2,
+  slidesToShow: 3,
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 3000,

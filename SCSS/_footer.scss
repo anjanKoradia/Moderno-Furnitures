@@ -1,13 +1,13 @@
 /*  Footer Styling Start */
 .footer {
-  background-color: $light;
+  background-color: #fcf8f8;
   .footer_top {
-    padding: 1.5rem 0;
+    padding: 1.2rem 0;
 
     .logo {
       img {
-        width: 180px;
-        height: 50px;
+        width: 160px;
+        height: 40px;
       }
     }
     .social_media {
@@ -28,9 +28,8 @@
     padding: 2rem 0;
     border-top: 1px solid $light-border;
     border-bottom: 1px solid $light-border;
+
     > div {
-      flex: 1;
-      height: 100%;
       h4 {
         font-size: $text2;
         padding: 0.5rem 0;
@@ -58,6 +57,7 @@
       }
     }
     .newsletter {
+      max-width: 30%;
       p {
         margin: 1.5rem 0;
         text-align: justify;

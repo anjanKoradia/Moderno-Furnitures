@@ -3,11 +3,16 @@
 
   .services {
     .service_detail {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       width: 350px;
+      height: 200px;
       text-align: center;
       border: 2px solid black;
       padding: 2rem;
-      margin: 0 1rem;
+      margin: auto 1rem;
       border: 1px solid $light-border;
       border-radius: 5px;
       color: $dark-blue;
