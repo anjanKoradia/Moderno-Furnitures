@@ -1185,6 +1185,28 @@ body {
 
 /*  Blog Page Styling End */
 /*  Footer Styling Start */
+.news_letter {
+  margin-bottom: 5rem;
+}
+
+.news_letter form {
+  margin: 2rem 0;
+}
+
+.news_letter form input {
+  width: 300px;
+  padding: 0.8rem 1rem;
+  margin: 0 1rem;
+  outline: none;
+}
+
+.news_letter form button {
+  padding: 0.8rem 1rem;
+  outline: none;
+  background-color: #253237;
+  color: white;
+}
+
 .footer {
   background-color: #fcf8f8;
 }

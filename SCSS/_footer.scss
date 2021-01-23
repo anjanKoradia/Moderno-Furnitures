@@ -1,4 +1,23 @@
 /*  Footer Styling Start */
+.news_letter {
+  margin-bottom: 5rem;
+  form {
+    margin: 2rem 0;
+    input {
+      width: 300px;
+      padding: 0.8rem 1rem;
+      margin: 0 1rem;
+      outline: none;
+    }
+    button {
+      padding: 0.8rem 1rem;
+      outline: none;
+      background-color: $dark-blue;
+      color: $pure;
+    }
+  }
+}
+
 .footer {
   background-color: #fcf8f8;
   .footer_top {
