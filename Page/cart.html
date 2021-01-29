@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moderno Furniture</title>
+
+    <!-- Favicon -->
+    <link rel="icon" sizes="76x76" href="../Assets/favicon.ico" />
+
+    <!-- Font Awesome CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../CSS/App.css" />
+  </head>
+  <body>
+    <!-- ---------------------------------------- Header Start ---------------------------------------- -->
+    <header>
+      <!-- Topbar Start -->
+      <div class="cart_topbar container flex justify-between align-center">
+        <div class="icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/anjanKoradia" target="_blank"
+            ><i class="fab fa-github-alt"></i
+          ></a>
+        </div>
+        <div class="auth flex align-center">
+          <div>
+            <a href="../index.html"
+              ><i
+                class="fas fa-sign-out-alt"
+                style="transform: rotate(180deg)"
+              ></i>
+              Go Back</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Topbar End -->
+    </header>
+    <!-- ---------------------------------------- Header End ---------------------------------------- -->
+
+    <!-- ---------------------------------------- Cart Start ---------------------------------------- -->
+    <section class="cart_section container" id="cartSection">
+      <div class="cart_body flex">
+        <div class="left_side">
+          <div class="cart_heading flex align-center">
+            <i class="fas fa-shopping-cart"></i>
+            <h1>Shopping Cart</h1>
+          </div>
+          <div class="cart_content">
+            <div class="cart_details flex justify-between">
+              <div class="cart_item flex align-center justify-around">
+                <div class="cart_item_img">
+                  <img src="../Assets/Products_Images/thumb-13.jpg" alt="" />
+                </div>
+                <div class="cart_item_details">
+                  <h3>Confortable Chair</h3>
+                  <p>Office Furniture</p>
+                  <div class="item_quntity flex align-center">
+                    <h4>QTY :</h4>
+                    <div class="add_remove_item flex align-center">
+                      <i class="fas fa-minus-circle"></i>
+                      <h4>1</h4>
+                      <i class="fas fa-plus-circle"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cart_item_price flex align-center justify-between">
+                <h3>Rs. 1200</h3>
+                <p><i class="fas fa-trash"></i> Delete</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right_side">
+          <div class="cart_heading">
+            <h1>Order Summary :</h1>
+          </div>
+          <div class="cart_checkout">
+            <div class="selling_price">
+              <p>Total Cart Items</p>
+              <p>1</p>
+            </div>
+            <div class="selling_price">
+              <p>Cart Total</p>
+              <p>Rs. 1200</p>
+            </div>
+            <div class="discount_price">
+              <p>Cart Discount</p>
+              <p>- Rs. 200</p>
+            </div>
+            <div class="shipping_fee">
+              <p>Delivery Charge</p>
+              <p>Rs. 50</p>
+            </div>
+            <div class="total_price">
+              <h3>Order Total</h3>
+              <h3 class="cart_total_price">Rs. 1050</h3>
+            </div>
+            <div class="inside_cart_btn flex">
+              <button class="btn clear_cart_btn">Clear Cart</button>
+              <button class="btn checkout_btn">Proceed To Checkout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ---------------------------------------- Cart End ---------------------------------------- -->
+
+    <!-- ---------------------------------------- Footer Start ---------------------------------------- -->
+    <section class="news_letter container">
+      <div class="titel">
+        <h1 class="t1">Newsletter</h1>
+        <p class="t3">
+          You may unsubscribe at any moment. For that purpose, please find our
+          contact info in the legal notice.
+        </p>
+      </div>
+      <form class="flex align-center justify-center">
+        <input
+          type="email"
+          placeholder="Enter your email..."
+          oninvalid="setCustomValidity('Please check your email')"
+        />
+        <button type="submit">SUBSCRIB</button>
+      </form>
+    </section>
+
+    <section class="footer container" id="footer">
+      <div class="footer_top flex align-center justify-between">
+        <div class="logo">
+          <img src="../Assets/logo.png" alt="" />
+        </div>
+        <div class="social_media">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
+      <div class="footer_center flex justify-around">
+        <div class="footer_services">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../index.html">Assembly Guides</a></li>
+            <li><a href="../index.html">Furniture Packages & Fitouts</a></li>
+            <li><a href="../index.html">Trade Programme</a></li>
+            <li><a href="../index.html">Sale</a></li>
+            <li><a href="../index.html">New Designs</a></li>
+          </ul>
+        </div>
+        <div class="get_help">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="../index.html">Contact & FAQ</a></li>
+            <li><a href="../index.html">Track Your Order</a></li>
+            <li><a href="../index.html">Shipping & Delivery</a></li>
+            <li><a href="../index.html">Visit My Github</a></li>
+            <li><a href="../index.html">Interest Free Finance</a></li>
+          </ul>
+        </div>
+        <div class="information">
+          <h4>Information</h4>
+          <ul>
+            <li><a href="../index.html">Delivery</a></li>
+            <li><a href="../index.html">About Us</a></li>
+            <li><a href="../index.html">Secure Payment</a></li>
+            <li><a href="../index.html">New Arrival</a></li>
+            <li><a href="../index.html">Hot Deals</a></li>
+          </ul>
+        </div>
+
+        <div class="categories">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="../index.html">Chair</a></li>
+            <li><a href="../index.html">Sofa Set</a></li>
+            <li><a href="../index.html">Wall Clock</a></li>
+            <li><a href="../index.html">Table</a></li>
+            <li><a href="../index.html">Lamp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer_bottom flex align-center justify-between">
+        <div class="copy_write">
+          ©2021 All rights reseved | This templete is made with love by
+          <span><a href="" target="_blank">Anjan Koradia.</a></span>
+        </div>
+        <div class="payment">
+          <i class="fab fa-2x fa-cc-visa"></i>
+          <i class="fab fa-2x fa-cc-mastercard"></i>
+          <i class="fab fa-2x fa-cc-paypal"></i>
+          <i class="fab fa-2x fa-cc-apple-pay"></i>
+          <i class="fab fa-2x fa-cc-amazon-pay"></i>
+        </div>
+      </div>
+    </section>
+
+    <div class="scrolltop">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+    <!-- ---------------------------------------- Footer End ---------------------------------------- -->
+
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- External JS -->
+    <script src="./JS/App.js"></script>
+  </body>
+</html>

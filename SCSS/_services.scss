@@ -1,38 +1,37 @@
-.services_container {
-  padding: 5rem 0;
+/*  Services Section Styling Start */
+.services {
+  .service_detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 350px;
+    height: 200px;
+    text-align: center;
+    border: 2px solid black;
+    padding: 2rem;
+    margin: auto 1rem;
+    border: 1px solid $light-border;
+    border-radius: 5px;
+    color: $dark-blue;
+    outline: none;
+    transform: $transition;
 
-  .services {
-    .service_detail {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      width: 350px;
-      height: 200px;
-      text-align: center;
-      border: 2px solid black;
-      padding: 2rem;
-      margin: auto 1rem;
-      border: 1px solid $light-border;
-      border-radius: 5px;
-      color: $dark-blue;
-      outline: none;
-      transform: $transition;
+    h3 {
+      margin: 1rem 0;
+    }
+    i {
+      color: $dark-gray;
+    }
 
-      h3 {
-        margin: 1rem 0;
-      }
+    &:hover {
+      border-color: $light-red;
+
       i {
-        color: $dark-gray;
-      }
-
-      &:hover {
-        border-color: $light-red;
-
-        i {
-          color: $light-red;
-        }
+        color: $light-red;
       }
     }
   }
 }
+
+/*  Services Section Styling End */

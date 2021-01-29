@@ -39,14 +39,30 @@
       }
     }
   }
+}
+@keyframes slider {
+  0% {
+    background: url("../Assets/hero-slider1.jpg") center/cover no-repeat;
+  }
+  35% {
+    background: url("../Assets/hero-slider2.jpg") center/cover no-repeat;
+  }
+  75% {
+    background: url("../Assets/hero-slider3.jpg") center/cover no-repeat;
+  }
+}
+/* Hero Section Styling End */
 
-  .fixed_cart_btn {
-    position: fixed;
-    left: -150px;
-    top: 50%;
-    transition: $transition;
-    z-index: 5;
+/* Fixed Cart Button Styling Start */
+.fixed_cart_btn {
+  position: fixed;
+  left: -150px;
+  top: 50%;
+  transition: $transition;
+  z-index: 5;
 
+  a {
+    text-decoration: none;
     p {
       background-color: $dark-blue;
       border: 2px solid $dark-blue;
@@ -66,16 +82,4 @@
     }
   }
 }
-@keyframes slider {
-  0% {
-    background: url("../Assets/hero-slider1.jpg") center/cover no-repeat;
-  }
-  35% {
-    background: url("../Assets/hero-slider2.jpg") center/cover no-repeat;
-  }
-  75% {
-    background: url("../Assets/hero-slider3.jpg") center/cover no-repeat;
-  }
-}
-
-/* Hero Section Styling End */
+/* Fixed Cart Button Styling End */

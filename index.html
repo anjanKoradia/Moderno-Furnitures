@@ -76,8 +76,10 @@
               <i class="fas fa-search"></i>
             </div>
             <i class="fas fa-2x fa-user-circle"></i>
-            <div onclick="toggleCart()" class="cart_btn flex align-center">
-              <a href="#"><i class="fas fa-shopping-basket"></i></a>
+            <div class="cart_btn flex align-center">
+              <a href="./Page/cart.html"
+                ><i class="fas fa-shopping-basket"></i
+              ></a>
               <p class="total_cart_items">0</p>
             </div>
           </div>
@@ -107,73 +109,49 @@
     </nav>
     <!-- ---------------------------------------- Navbar End ---------------------------------------- -->
 
-    <!-- ---------------------------------------- Cart Start ---------------------------------------- -->
-    <section class="cart_section" id="cartSection">
-      <div class="overlay" onclick="toggleCart()"></div>
-      <div class="cart_body">
-        <div class="cart_header">
-          <div class="cart_heading flex align-center">
-            <i class="fas fa-shopping-cart"></i>
-            <h1>Shopping Cart</h1>
+    <!-- ---------------------------------------- Mobile Navigation Start ---------------------------------------- -->
+    <div class="mobile_overlay" onclick="toggleMobileMenu()"></div>
+    <section class="mobile_navigation container">
+      <div class="mobile_nav">
+        <div class="mobile_auth flex align-center justify-around">
+          <div>
+            <i class="fas fa-user"></i>
+            <a href="#">Login</a>
           </div>
-          <i class="fas fa-2x fa-times" onclick="toggleCart()"></i>
+          <span class="divider">|</span>
+          <div>
+            <i class="fas fa-sign-in-alt"></i>
+            <a href="#">Sing In</a>
+          </div>
         </div>
-        <div class="cart_container flex">
-          <div class="cart_content">
-            <div class="cart_details">
-              <div class="cart_item flex align-center justify-around">
-                <div class="cart_item_img">
-                  <img src="./Assets/Products_Images/thumb-13.jpg" alt="" />
-                  <i class="fas fa-trash"></i>
-                </div>
-                <div class="cart_item_details">
-                  <h4>Confortable Chair</h4>
-                  <p>Office Furniture</p>
-                </div>
-              </div>
-              <div class="left_cart_item flex justify-between align-center">
-                <div class="cart_item_price">
-                  <h3>&#x20b9; 1200</h3>
-                </div>
-                <div class="add_remove_item flex align-center">
-                  <i class="fas fa-chevron-up"></i>
-                  <h4>1</h4>
-                  <i class="fas fa-chevron-down"></i>
-                </div>
-              </div>
+        <div class="go_back flex align-center justify-between">
+          <a href="#">Menu</a>
+          <i class="fas fa-arrow-left" onclick="toggleMobileMenu()"></i>
+        </div>
+        <div class="mobile_nav_links flex">
+          <a href="#">Home</a>
+          <div class="shop_dropdown">
+            <div
+              class="flex align-center justify-between"
+              onclick="toggleShopDp()"
+            >
+              <p>Shop</p>
+              <p>+</p>
+            </div>
+            <div class="dropdown_content">
+              <li><a href="#popularCategory">Popular Category</a></li>
+              <li><a href="#newArrivals">New Arrivals</a></li>
+              <li><a href="#hotDeals">Hot Deals</a></li>
             </div>
           </div>
-          <div class="cart_checkout">
-            <h2>Price Details :</h2>
-            <div class="selling_price">
-              <p>Selling Price</p>
-              <p>&#x20b9; 1200</p>
-            </div>
-            <div class="discount_price">
-              <p>Extra Discount</p>
-              <p>- &#x20b9; 200</p>
-            </div>
-            <div class="special_price">
-              <p>Special Price</p>
-              <p>&#x20b9; 1000</p>
-            </div>
-            <div class="shipping_fee">
-              <p>Shipping Fees</p>
-              <p>&#x20b9; 50</p>
-            </div>
-            <div class="total_price">
-              <h3>Total Amount</h3>
-              <h3 class="cart_total_price">&#x20b9; 1050</h3>
-            </div>
-            <div class="inside_cart_btn">
-              <button class="btn clear_cart_btn">Clear Cart</button>
-              <button class="btn checkout_btn">Proceed To Checkout</button>
-            </div>
-          </div>
+          <a href="#services">Services</a>
+          <a href="#products">Products</a>
+          <a href="#blog">Blog</a>
+          <a href="#footer">Contact Us</a>
         </div>
       </div>
     </section>
-    <!-- ---------------------------------------- Cart End ---------------------------------------- -->
+    <!-- ---------------------------------------- Mobile Navigation End ---------------------------------------- -->
 
     <!-- ---------------------------------------- Hero Section Start ---------------------------------------- -->
     <section class="hero flex align-center container">
@@ -186,16 +164,17 @@
         </p>
         <a href="#products">SHOP NOW</a>
       </div>
-      <div class="fixed_cart_btn">
-        <p onclick="toggleCart()">
-          VIEW CART <i class="fas fa-shopping-basket"></i>
-        </p>
-      </div>
     </section>
+
+    <div class="fixed_cart_btn">
+      <a href="./Page/cart.html"
+        ><p>VIEW CART <i class="fas fa-shopping-basket"></i></p
+      ></a>
+    </div>
     <!-- ---------------------------------------- Hero Section End ---------------------------------------- -->
 
     <!-- ---------------------------------------- Banner Panal 1 Start ---------------------------------------- -->
-    <section class="banner_panal_1 flex align-center justify-between">
+    <section class="banner banner_panal_1 flex align-center justify-between">
       <div class="banner">
         <img src="./Assets/banner-1.png" alt="" />
       </div>
@@ -209,13 +188,12 @@
     <!-- ---------------------------------------- Banner Panal 1 End ---------------------------------------- -->
 
     <!-- ---------------------------------------- Popular Category Section Start ---------------------------------------- -->
-    <div class="popular_category_container" id="popularCategory">
+    <div class="outer_container" id="popularCategory">
       <div class="titel container">
         <h1 class="t1">Popular Category</h1>
         <p class="t3">Add Popular Category to weekly line up</p>
         <hr />
       </div>
-
       <section class="popular_category container">
         <button class="category_prev_btn">
           <i class="fas fa-chevron-left"></i>
@@ -291,7 +269,7 @@
     <!-- ---------------------------------------- Popular Category Section End ---------------------------------------- -->
 
     <!-- ---------------------------------------- Banner Panal 2 Start ---------------------------------------- -->
-    <div class="banner_panal_2 container">
+    <div class="banner banner_panal_2 container">
       <div class="banner">
         <img src="./Assets/banner-4.png" alt="" />
       </div>
@@ -299,7 +277,7 @@
     <!-- ---------------------------------------- Banner Panal 2 End ---------------------------------------- -->
 
     <!-- ---------------------------------------- New Arrivals Section Start ---------------------------------------- -->
-    <div class="new_arrival_container" id="newArrivals">
+    <div class="outer_container" id="newArrivals">
       <div class="titel container">
         <h1 class="t1">New Arrivals</h1>
         <p class="t3">Add new products to weekly line up</p>
@@ -331,7 +309,7 @@
     <!-- ---------------------------------------- New Arrivals Section End ---------------------------------------- -->
 
     <!-- ---------------------------------------- Services Section Start ---------------------------------------- -->
-    <div class="services_container" id="services">
+    <div class="outer_container" id="services">
       <div class="titel container">
         <h1 class="t1">Services</h1>
         <p class="t3">We provide excellent after sell services</p>
@@ -363,7 +341,9 @@
     <!-- ---------------------------------------- Services Section End ---------------------------------------- -->
 
     <!-- ---------------------------------------- Banner Panal 3 Start ---------------------------------------- -->
-    <section class="banner_panal_3 container flex justify-around align-center">
+    <section
+      class="banner banner_panal_3 container flex justify-around align-center"
+    >
       <div class="banner">
         <img src="./Assets/banner-5.png" alt="" />
       </div>
@@ -377,7 +357,7 @@
     <!-- ---------------------------------------- Banner Panal 3 End ---------------------------------------- -->
 
     <!-- ---------------------------------------- Hot Deals Section Start ---------------------------------------- -->
-    <div class="hotDeal_container container" id="hotDeals">
+    <div class="hotDeal_container outer_container container" id="hotDeals">
       <div class="titel container">
         <h1 class="t1">Hot Deals</h1>
         <p class="t3">Add hot products to weekly line up</p>
@@ -495,7 +475,7 @@
     <!-- ---------------------------------------- Hot Deals Section End ---------------------------------------- -->
 
     <!-- ---------------------------------------- Products Section Start ---------------------------------------- -->
-    <div class="products_container" id="products">
+    <div class="outer_container" id="products">
       <div class="titel container">
         <h1 class="t1">Products</h1>
         <p class="t3">Add new products to weekly line up</p>
@@ -526,7 +506,7 @@
     <!-- ---------------------------------------- Products Section End ---------------------------------------- -->
 
     <!-- ---------------------------------------- Blog Section Start ---------------------------------------- -->
-    <div class="blog_container" id="blog">
+    <div class="outer_container" id="blog">
       <div class="titel container">
         <h1 class="t1">Latest Blogs</h1>
         <p class="t3">

@@ -1,5 +1,6 @@
 /* Topbar Styling Start */
-.topbar {
+.topbar,
+.cart_topbar {
   background-color: $dark-blue;
   color: $pure;
   padding: 0.4rem 3.125rem;
@@ -34,6 +35,7 @@
 
   .hamburger {
     display: none;
+    cursor: pointer;
   }
 
   .contact_info {

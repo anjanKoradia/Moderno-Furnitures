@@ -32,6 +32,12 @@ $text5: 0.5rem;
   padding: 0 3.125rem;
   margin: 0 auto;
 }
+.outer_container {
+  padding: 5rem 0;
+}
+.banner {
+  margin: 5rem 0;
+}
 
 .flex {
   display: flex;
@@ -116,3 +122,5 @@ body {
 @import "./product";
 @import "./blog";
 @import "./footer";
+@import "./mobileNav";
+@import "./mediaQuery";
