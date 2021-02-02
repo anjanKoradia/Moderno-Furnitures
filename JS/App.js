@@ -1,13 +1,21 @@
 let productsContainer = document.querySelector(".products");
 let arrivalsContainer = document.querySelector(".new_arrivals");
-let dealContainer = document.querySelector(".hot_deal_slider");
-let cartSection = document.querySelector("#cartSection");
-let cartContent = document.querySelector(".cart_content");
-let cartTotal = document.querySelector(".cart_total_price");
-let cartItems = document.querySelector(".total_cart_items");
-let clearCartBtn = document.querySelector(".clear_cart_btn");
+let cartTotalItems_Nav = document.querySelector(".total_cart_items");
+
+let cart = [];
 
 class Products {
+  async getAllItems() {
+    try {
+      let all_item_data = await fetch("../Data/Items.json");
+      let result = await all_item_data.json();
+
+      return result;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   async getArrival() {
     try {
       let arrival_data = await fetch("../Data/newArrivals.json");
@@ -32,25 +40,25 @@ class Products {
 class UI {
   displayArrivals(products) {
     let result = "";
-    products.forEach((product) => {
+    products.forEach((item) => {
       result += `
       <div class="arrival_product_card">
         <div class="arrival_product_img">
           <span class="tag">New</span>
-          <img src="${product.image}" alt="" />
-          <button class = "AddToCart" data-id=${product.id}>
+          <img src="${item.image}" alt="" />
+          <button class = "arrival_AddToCart_button" data-id=${item.id}>
             <i class="fas fa-shopping-cart"></i>
             ADD TO CART
           </button>
         </div>
         <div class="arrival_product_details">
-          <p>${product.category}</p>
-          <h4>${product.name}</h4>
-          <h3 class="stars">${product.rating}</h3>
+          <p>${item.category}</p>
+          <h4>${item.name}</h4>
+          <h3 class="stars">${item.rating}</h3>
           <div class="arrival_product_price flex align-center justify-center">
-            <s>&#x20b9;${product.price.orignal}</s>
-            <p>&#x20b9;${product.price.current}</p>
-            <span class="tag">${product.price.discount}</span>
+            <s>&#x20b9;${item.price.orignal}</s>
+            <p>&#x20b9;${item.price.current}</p>
+            <span class="tag">${item.price.discount}</span>
           </div>
         </div>
       </div>
@@ -61,24 +69,24 @@ class UI {
 
   displayProducts(products) {
     let result = "";
-    products.forEach((product) => {
+    products.forEach((item) => {
       result += `
       <div class="product_card">
         <div class="product_img">
-          <img src=${product.image} alt="" />
-          <button class = "AddToCart" data-id=${product.id}>
+          <img src=${item.image} alt="" />
+          <button class = "product_AddToCart_button" data-id=${item.id}>
             <i class="fas fa-shopping-cart"></i>
             ADD TO CART
           </button>
         </div>
         <div class="product_details">
-          <p>${product.category}</p>
-          <h4>${product.name}</h4>
-          <h3 class="stars">${product.rating}</h3>
+          <p>${item.category}</p>
+          <h4>${item.name}</h4>
+          <h3 class="stars">${item.rating}</h3>
           <div class="product_item_price flex align-center justify-center">
-            <s>&#x20b9;${product.price.orignal}</s>
-            <p>&#x20b9;${product.price.current}</p>
-            <span class="tag">${product.price.discount}</span>
+            <s>&#x20b9;${item.price.orignal}</s>
+            <p>&#x20b9;${item.price.current}</p>
+            <span class="tag">${item.price.discount}</span>
           </div>
         </div>
       </div>
@@ -86,19 +94,159 @@ class UI {
     });
     productsContainer.innerHTML = result;
   }
+
+  // Get all arrival card buttons
+  getArrivalCartBtn() {
+    const arrival_addCartBtns = [
+      ...document.querySelectorAll(".arrival_AddToCart_button"),
+    ];
+
+    const addToCartFunctionality = new Add_To_Cart_Functionality();
+    addToCartFunctionality.addToCart(arrival_addCartBtns);
+  }
+
+  // Get all product card buttons
+  getProductCartBtn() {
+    const product_addCartBtns = [
+      ...document.querySelectorAll(".product_AddToCart_button"),
+    ];
+
+    const addToCartFunctionality = new Add_To_Cart_Functionality();
+    addToCartFunctionality.addToCart(product_addCartBtns);
+  }
+
+  // SetUp App On Window Load
+  setupApp() {
+    cart = Storage.getCart();
+
+    const addToCartFunctionality = new Add_To_Cart_Functionality();
+    addToCartFunctionality.setCartValue(cart);
+  }
+}
+
+class Add_To_Cart_Functionality {
+  addToCart(addCartBtn) {
+    addCartBtn.forEach((button) => {
+      let id = button.dataset.id;
+
+      let inCart = cart.find((item) => item.id == id);
+
+      // Check item is available in cart or not if available then change add_to_cart btn text and disable that button.
+      if (inCart) {
+        button.innerHTML = `
+        <i class="far fa-hand-point-right"></i>
+        IN CART
+      `;
+        button.disabled = true;
+      } else {
+        button.addEventListener("click", (event) => {
+          event.target.innerHTML = `
+            <i class="far fa-hand-point-right"></i>
+            IN CART
+          `;
+          event.target.disabled = true;
+
+          // Get targeted item from localstorage
+          let cartItem = { ...Storage.getItem(id), numberOfItems: 1 };
+
+          // Add item to cart
+          cart = [...cart, cartItem];
+
+          // Sava cart in localStorage
+          Storage.saveCart(cart);
+
+          // Set cart value
+          this.setCartValue(cart);
+
+          // Show added cart popup message
+          this.showAddToCartMessage();
+        });
+      }
+    });
+  }
+
+  // Set cart value
+  setCartValue(cart) {
+    let itemsTotal = 0;
+
+    cart.map((item) => {
+      itemsTotal += item.numberOfItems;
+    });
+
+    cartTotalItems_Nav.innerText = itemsTotal;
+  }
+
+  // Show added to cart popup message
+  showAddToCartMessage() {
+    new Noty({
+      theme: "metroui",
+      type: "success",
+      layout: "topRight",
+      text: `<i class="fab fa-2x fa-opencart"></i> &nbsp; Item successfully added to cart.`,
+      closeWith: ["click", "button"],
+      killer: true,
+      timeout: 2000,
+      progressBar: true,
+    }).show();
+  }
+}
+
+class Storage {
+  // Store All Items in localstorage.
+  static savaItems(items) {
+    localStorage.setItem("All_Items", JSON.stringify(items));
+  }
+
+  // Get item based on id from localstorage.
+  static getItem(id) {
+    let item = JSON.parse(localStorage.getItem("All_Items"));
+    return item.find((item) => item.id == id);
+  }
+
+  // Sava cart in localStorage
+  static saveCart(cart) {
+    localStorage.setItem("Cart", JSON.stringify(cart));
+  }
+
+  // Get cart from localstorage
+  static getCart() {
+    return localStorage.getItem("Cart")
+      ? JSON.parse(localStorage.getItem("Cart"))
+      : [];
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   const products = new Products();
   const ui = new UI();
 
-  products.getArrival().then((products) => {
-    ui.displayArrivals(products);
+  // Setup App
+  ui.setupApp();
+
+  // For All Items
+  products.getAllItems().then((item) => {
+    Storage.savaItems(item);
   });
 
-  products.getProducts().then((products) => {
-    ui.displayProducts(products);
-  });
+  // For New Arrival Section
+  products
+    .getArrival()
+    .then((products) => {
+      ui.displayArrivals(products);
+    })
+    .then(() => {
+      ui.getArrivalCartBtn();
+    });
+
+  // For Products Section
+  products
+    .getProducts()
+    .then((products) => {
+      ui.displayProducts(products);
+    })
+    .then(() => {
+      ui.getProductCartBtn();
+    });
 });
 
 // -------------------- Popular Category Section Js Start --------------------
@@ -288,8 +436,3 @@ $(".mobile_nav .mobile_nav_links a").click(function () {
   $(".mobile_overlay").toggleClass("mobile_nav_overlay_toggle");
 });
 // -------------------- Toggle Mobile Navigation Menu End --------------------
-
-// -------------------- Toggle shopping cart --------------------
-function toggleCart() {
-  $("#cartSection").toggleClass("activeCart");
-}
