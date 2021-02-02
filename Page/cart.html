@@ -16,6 +16,14 @@
       crossorigin="anonymous"
     />
 
+    <!-- NotyJs CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css"
+      integrity="sha512-0p3K0H3S6Q4bEWZ/WmC94Tgit2ular2/n0ESdfEX8l172YyQj8re1Wu9s/HT9T/T2osUw5Gx/6pAZNk3UKbESw=="
+      crossorigin="anonymous"
+    />
+
     <!-- External CSS -->
     <link rel="stylesheet" href="../CSS/App.css" />
   </head>
@@ -57,48 +65,24 @@
             <i class="fas fa-shopping-cart"></i>
             <h1>Shopping Cart</h1>
           </div>
-          <div class="cart_content">
-            <div class="cart_details flex justify-between">
-              <div class="cart_item flex align-center justify-around">
-                <div class="cart_item_img">
-                  <img src="../Assets/Products_Images/thumb-13.jpg" alt="" />
-                </div>
-                <div class="cart_item_details">
-                  <h3>Confortable Chair</h3>
-                  <p>Office Furniture</p>
-                  <div class="item_quntity flex align-center">
-                    <h4>QTY :</h4>
-                    <div class="add_remove_item flex align-center">
-                      <i class="fas fa-minus-circle"></i>
-                      <h4>1</h4>
-                      <i class="fas fa-plus-circle"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="cart_item_price flex align-center justify-between">
-                <h3>Rs. 1200</h3>
-                <p><i class="fas fa-trash"></i> Delete</p>
-              </div>
-            </div>
-          </div>
+          <div class="cart_content"></div>
         </div>
         <div class="right_side">
           <div class="cart_heading">
             <h1>Order Summary :</h1>
           </div>
           <div class="cart_checkout">
-            <div class="selling_price">
+            <div class="total_item">
               <p>Total Cart Items</p>
-              <p>1</p>
+              <p>0</p>
             </div>
             <div class="selling_price">
               <p>Cart Total</p>
-              <p>Rs. 1200</p>
+              <p>Rs. 0</p>
             </div>
             <div class="discount_price">
               <p>Cart Discount</p>
-              <p>- Rs. 200</p>
+              <p>- Rs. 0</p>
             </div>
             <div class="shipping_fee">
               <p>Delivery Charge</p>
@@ -106,7 +90,7 @@
             </div>
             <div class="total_price">
               <h3>Order Total</h3>
-              <h3 class="cart_total_price">Rs. 1050</h3>
+              <h3 class="cart_total_price">Rs. 50</h3>
             </div>
             <div class="inside_cart_btn flex">
               <button class="btn clear_cart_btn">Clear Cart</button>
@@ -212,14 +196,14 @@
     </div>
     <!-- ---------------------------------------- Footer End ---------------------------------------- -->
 
-    <!-- jQuery -->
+    <!-- NotyJs JS CDN -->
     <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"
+      integrity="sha512-lOrm9FgT1LKOJRUXF3tp6QaMorJftUjowOWiDcG5GFZ/q7ukof19V0HKx/GWzXCdt9zYju3/KhBNdCLzK8b90Q=="
       crossorigin="anonymous"
     ></script>
 
     <!-- External JS -->
-    <script src="./JS/App.js"></script>
+    <script src="../JS/Cart.js"></script>
   </body>
 </html>
