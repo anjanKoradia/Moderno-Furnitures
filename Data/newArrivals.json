@@ -1,66 +1,66 @@
 [
     {
-        "id": 10,
-        "image": "./Assets/Products_Images/thumb-10.jpg",
+        "id": 1,
+        "image": "./Assets/Products_Images/thumb-23.jpg",
+        "category": "office furniture",
+        "name": "Windsor chair",
+        "rating": "★★★★☆",
+        "price": {
+            "orignal": 499,
+            "current": 420,
+            "discount": "-16%"
+        }
+    },
+    {
+        "id": 2,
+        "image": "./Assets/Products_Images/thumb-24.jpg",
+        "category": "bar furniture",
+        "name": "Cafe Lamp",
+        "rating": "★★★☆☆",
+        "price": {
+            "orignal": 359,
+            "current": 340,
+            "discount": "-5%"
+        }
+    },
+    {
+        "id": 3,
+        "image": "./Assets/Products_Images/thumb-25.jpg",
         "category": "home furniture",
-        "name": "Cantilever Chair",
+        "name": "Sofa Type chair",
         "rating": "★★★★★",
         "price": {
-            "orignal": 1699,
-            "current": 1444,
-            "discount": "-15%"
-        }
-    },
-    {
-        "id": 12,
-        "image": "./Assets/Products_Images/thumb-12.jpg",
-        "category": "bar furniture",
-        "name": "Bar Chair",
-        "rating": "★★★★☆",
-        "price": {
-            "orignal": 829,
-            "current": 449,
-            "discount": "-18%"
-        }
-    },
-    {
-        "id": 15,
-        "image": "./Assets/Products_Images/thumb-15.jpg",
-        "category": "bar furniture",
-        "name": "Glass Shape Lamp",
-        "rating": "★★★★☆",
-        "price": {
-            "orignal": 430,
-            "current": 378,
+            "orignal": 6899,
+            "current": 6070,
             "discount": "-12%"
         }
     },
     {
-        "id": 19,
-        "image": "./Assets/Products_Images/thumb-19.jpg",
-        "category": "home furniture",
-        "name": "Drwaing Room Sofa",
+        "id": 4,
+        "image": "./Assets/Products_Images/thumb-26.jpg",
+        "category": "kitchen furniture",
+        "name": "Armless Chair",
         "rating": "★★★★☆",
         "price": {
-            "orignal": 20599,
-            "current": 16067,
-            "discount": "-22%"
+            "orignal": 899,
+            "current": 720,
+            "discount": "-20%"
         }
     },
     {
-        "id": 20,
-        "image": "./Assets/Products_Images/thumb-20.jpg",
-        "category": "home furniture",
-        "name": "Flower Pot Stool",
+        "id": 5,
+        "image": "./Assets/Products_Images/thumb-27.jpg",
+        "category": "indoor furniture",
+        "name": "Study Lamp",
         "rating": "★★★★☆",
         "price": {
-            "orignal": 329,
-            "current": 300,
-            "discount": "-8%"
+            "orignal": 399,
+            "current": 363,
+            "discount": "-9%"
         }
     },
     {
-        "id": 28,
+        "id": 6,
         "image": "./Assets/Products_Images/thumb-28.jpg",
         "category": "kitchen furniture",
         "name": "Nosel Lamp",
