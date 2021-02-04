@@ -159,7 +159,10 @@ class Add_To_Cart_Functionality {
           this.setCartValue(cart);
 
           // Show added cart popup message
-          this.showAddToCartMessage();
+          popupMessage.show(
+            "success",
+            `<i class="fab fa-2x fa-opencart"></i> &nbsp; Item successfully added to cart.`
+          );
         });
       }
     });
@@ -175,19 +178,44 @@ class Add_To_Cart_Functionality {
 
     cartTotalItems_Nav.innerText = itemsTotal;
   }
+}
 
-  // Show added to cart popup message
-  showAddToCartMessage() {
+class popupMessage {
+  static show(type, message) {
     new Noty({
       theme: "metroui",
-      type: "success",
+      type: `${type}`,
       layout: "topRight",
-      text: `<i class="fab fa-2x fa-opencart"></i> &nbsp; Item successfully added to cart.`,
+      text: `${message}`,
       closeWith: ["click", "button"],
       killer: true,
       timeout: 2000,
       progressBar: true,
     }).show();
+  }
+
+  static fire() {
+    Swal.fire({
+      html: `
+      <div>
+        <p>Kindly hover or click on product image to see add to cart button.</p>
+        <b>
+          This project was created by <a href="https://github.com/anjanKoradia" style="text-decoration: none; color:#cf2829" target="_blank">Anjan Koradia</a> with love kindly don't copy it.
+        </b>
+      </div>`,
+      imageUrl: "../Assets/welcome.png",
+
+      imageAlt: "Welcome",
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText: `
+      <div class="flex align-center">
+        <p>Continue</p>
+        &nbsp;
+        <i class="fa fa-arrow-right"></i>
+      </div>`,
+      confirmButtonColor: "#cf2829",
+    });
   }
 }
 
@@ -219,6 +247,9 @@ class Storage {
 document.addEventListener("DOMContentLoaded", () => {
   const products = new Products();
   const ui = new UI();
+
+  // On window load greet.
+  popupMessage.fire();
 
   // Setup App
   ui.setupApp();
@@ -436,3 +467,15 @@ $(".mobile_nav .mobile_nav_links a").click(function () {
   $(".mobile_overlay").toggleClass("mobile_nav_overlay_toggle");
 });
 // -------------------- Toggle Mobile Navigation Menu End --------------------
+
+$(
+  ".topbar .auth .login, .topbar .auth .singIn, .top_nav .right_side .fa-user-circle"
+).on("click", () => {
+  popupMessage.show(
+    "error",
+    `<div class="flex align-center justify-between">
+    <i class="fas fa-3x fa-exclamation-circle"></i>&nbsp;&nbsp;
+    <p>This functionality is currently not working.</p>
+  </div>  `
+  );
+});

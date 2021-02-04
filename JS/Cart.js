@@ -1,11 +1,10 @@
 let cartContent = document.querySelector(".cart_content");
-
 let cartItems = document.querySelector(".total_item p:nth-child(2)");
 let sellingPrice = document.querySelector(".selling_price p:nth-child(2)");
 let extraDiscount = document.querySelector(".discount_price p:nth-child(2)");
 let cartTotal = document.querySelector(".total_price h3:nth-child(2)");
-
 let clearCartBtn = document.querySelector(".clear_cart_btn");
+const checkoutBtn = document.querySelector(".checkout_btn");
 
 let cart = [];
 
@@ -82,21 +81,39 @@ class CartFunctionality {
     UI.displayCartValues(values);
   }
 
+  // Clear Cart
   clearCart() {
-    // Clear Cart
     clearCartBtn.addEventListener("click", () => {
       if (cart.length == 0) {
-        popupMessage.error("Cart is alredy clear.");
+        popupMessage.show(
+          "info",
+          `<i class="fab fa-2x fa-opencart"></i> &nbsp; Cart is alredy clear.`
+        );
       } else {
-        popupMessage.success("Cart clear successfully.");
+        popupMessage.show(
+          "success",
+          `<i class="fas fa-2x fa-check"></i> &nbsp; Cart clear successfully.`
+        );
+        cart = [];
+        this.setCartValues(cart);
+        Storage.saveCart(cart);
+        while (cartContent.children.length > 0) {
+          cartContent.removeChild(cartContent.children[0]);
+        }
       }
+    });
+  }
 
-      cart = [];
-      this.setCartValues(cart);
-      Storage.saveCart(cart);
-
-      while (cartContent.children.length > 0) {
-        cartContent.removeChild(cartContent.children[0]);
+  // Checkout Cart
+  checkoutCart() {
+    checkoutBtn.addEventListener("click", () => {
+      if (cart.length == 0) {
+        popupMessage.show(
+          "warning",
+          `<i class="fab fa-2x fa-opencart"></i> &nbsp; Cart is empty.`
+        );
+      } else {
+        popupMessage.fire();
       }
     });
   }
@@ -155,22 +172,26 @@ class CartFunctionality {
     });
   }
 
+  // Remove item based on id
   removeItem(id) {
     let item_index = cart.findIndex((item) => item.id == id);
     cart.splice(item_index, 1);
     this.setCartValues(cart);
     Storage.saveCart(cart);
-    popupMessage.success("Item successfully remove from cart.");
+    popupMessage.show(
+      "success",
+      `<i class="fas fa-2x fa-trash"></i> &nbsp; Item successfully remove from cart.`
+    );
   }
 }
 
 class popupMessage {
-  static error(message) {
+  static show(type, message) {
     new Noty({
       theme: "metroui",
-      type: "warning",
+      type: `${type}`,
       layout: "topRight",
-      text: `<i class="fab fa-2x fa-opencart"></i> &nbsp; ${message}`,
+      text: `${message}`,
       closeWith: ["click", "button"],
       killer: true,
       timeout: 2000,
@@ -178,17 +199,40 @@ class popupMessage {
     }).show();
   }
 
-  static success(message) {
-    new Noty({
-      theme: "metroui",
-      type: "success",
-      layout: "topRight",
-      text: `<i class="fab fa-2x fa-opencart"></i> &nbsp; ${message}`,
-      closeWith: ["click", "button"],
-      killer: true,
-      timeout: 2000,
-      progressBar: true,
-    }).show();
+  static fire() {
+    Swal.fire({
+      html: `<div>
+      <p>Thank you for visiting my website.</p>
+      <b>
+        If you like my project then go to my github profile and fork my project
+        repositry.
+      </b>
+    </div>`,
+      imageUrl: "../Assets/thank-you.png",
+
+      imageAlt: "Thank You",
+      showCloseButton: true,
+      focusConfirm: false,
+      confirmButtonText: `
+      <div class="flex align-center">
+          <a href="../index.html" class="flex align-center" style="text-decoration: none; color: white">
+              <p>Continue Shopping</p>
+              &nbsp;
+              <i class="fa fa-arrow-left"></i>
+          </a>
+      </div>`,
+      confirmButtonColor: "#cf2829",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        cart = [];
+        const cartFunctionality = new CartFunctionality();
+        cartFunctionality.setCartValues(cart);
+        Storage.saveCart(cart);
+        while (cartContent.children.length > 0) {
+          cartContent.removeChild(cartContent.children[0]);
+        }
+      }
+    });
   }
 }
 
@@ -214,6 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
   UI.displayItemInCart(cart);
 
   cartFunctionality.setCartValues(cart);
+  cartFunctionality.checkoutCart();
   cartFunctionality.clearCart();
 
   let decreaseQty = [...document.querySelectorAll(".fa-minus-circle")];
