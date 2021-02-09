@@ -468,9 +468,7 @@ $(".mobile_nav .mobile_nav_links a").click(function () {
 });
 // -------------------- Toggle Mobile Navigation Menu End --------------------
 
-$(
-  ".topbar .auth .login, .topbar .auth .singIn, .top_nav .right_side .fa-user-circle"
-).on("click", () => {
+$(".login,.singIn,.fa-user-circle").on("click", () => {
   popupMessage.show(
     "error",
     `<div class="flex align-center justify-between">

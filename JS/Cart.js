@@ -2,6 +2,7 @@ let cartContent = document.querySelector(".cart_content");
 let cartItems = document.querySelector(".total_item p:nth-child(2)");
 let sellingPrice = document.querySelector(".selling_price p:nth-child(2)");
 let extraDiscount = document.querySelector(".discount_price p:nth-child(2)");
+let shippingFee = document.querySelector(".shipping_fee p:nth-child(2)");
 let cartTotal = document.querySelector(".total_price h3:nth-child(2)");
 let clearCartBtn = document.querySelector(".clear_cart_btn");
 const checkoutBtn = document.querySelector(".checkout_btn");
@@ -46,6 +47,11 @@ class UI {
     extraDiscount.innerHTML =
       `- ` + ` Rs. ` + parseFloat(cartValues.extraDiscountTotal.toFixed(2));
     cartTotal.innerHTML = `Rs. ` + parseFloat(cartValues.total.toFixed(2));
+    if (cartValues.specialPriceTotal > 499) {
+      shippingFee.innerHTML = `FREE`;
+    } else {
+      shippingFee.innerHTML = `Rs. 50`;
+    }
   }
 }
 
@@ -64,9 +70,13 @@ class CartFunctionality {
       extraDiscountTotal +=
         (item.price.orignal - item.price.current) * item.numberOfItems;
 
-      specialPriceTotal += item.price.current;
+      specialPriceTotal = sellingPriceTotal - extraDiscountTotal;
 
-      total = specialPriceTotal + 50;
+      if (specialPriceTotal > 499) {
+        total = specialPriceTotal;
+      } else {
+        total = specialPriceTotal + 50;
+      }
 
       itemsTotal += item.numberOfItems;
     });
@@ -75,6 +85,7 @@ class CartFunctionality {
       itemsTotal,
       sellingPriceTotal,
       extraDiscountTotal,
+      specialPriceTotal,
       total,
     };
 
@@ -135,16 +146,12 @@ class CartFunctionality {
     increaseQty.forEach((btn) => {
       btn.addEventListener("click", (e) => {
         let minusQtu = e.target;
-        console.log(
-          minusQtu.parentElement.parentElement.parentElement.parentElement
-            .parentElement
-        );
         let id = minusQtu.dataset.id;
         let item = cart.find((item) => item.id == id);
         item.numberOfItems = item.numberOfItems - 1;
         if (item.numberOfItems > 0) {
-          Storage.saveCart(cart);
           this.setCartValues(cart);
+          Storage.saveCart(cart);
           minusQtu.nextElementSibling.innerHTML = item.numberOfItems;
         } else if (item.numberOfItems <= 0) {
           cartContent.removeChild(
@@ -165,8 +172,8 @@ class CartFunctionality {
         let id = plusQtu.dataset.id;
         let item = cart.find((item) => item.id == id);
         item.numberOfItems = item.numberOfItems + 1;
-        Storage.saveCart(cart);
         this.setCartValues(cart);
+        Storage.saveCart(cart);
         plusQtu.previousElementSibling.innerHTML = item.numberOfItems;
       });
     });
