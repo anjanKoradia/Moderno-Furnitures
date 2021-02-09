@@ -15,83 +15,63 @@ class Products {
       console.log(error);
     }
   }
-
-  async getArrival() {
-    try {
-      let arrival_data = await fetch("../Data/newArrivals.json");
-      let result = await arrival_data.json();
-      return result;
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  async getProducts() {
-    try {
-      let product_data = await fetch("../Data/products.json");
-      let result = await product_data.json();
-      return result;
-    } catch (error) {
-      console.log(error);
-    }
-  }
 }
 
 class UI {
-  displayArrivals(products) {
+  displayArrivals(item) {
     let result = "";
-    products.forEach((item) => {
+    for (let i = 0; i < 6; i++) {
       result += `
       <div class="arrival_product_card">
         <div class="arrival_product_img">
           <span class="tag">New</span>
-          <img src="${item.image}" alt="" />
-          <button class = "arrival_AddToCart_button" data-id=${item.id}>
+          <img src="${item[i].image}" alt="" />
+          <button class = "arrival_AddToCart_button" data-id=${item[i].id}>
             <i class="fas fa-shopping-cart"></i>
             ADD TO CART
           </button>
         </div>
         <div class="arrival_product_details">
-          <p>${item.category}</p>
-          <h4>${item.name}</h4>
-          <h3 class="stars">${item.rating}</h3>
+          <p>${item[i].category}</p>
+          <h4>${item[i].name}</h4>
+          <h3 class="stars">${item[i].rating}</h3>
           <div class="arrival_product_price flex align-center justify-center">
-            <s>&#x20b9;${item.price.orignal}</s>
-            <p>&#x20b9;${item.price.current}</p>
-            <span class="tag">${item.price.discount}</span>
+            <s>&#x20b9;${item[i].price.orignal}</s>
+            <p>&#x20b9;${item[i].price.current}</p>
+            <span class="tag">${item[i].price.discount}</span>
           </div>
         </div>
       </div>
       `;
-    });
+    }
     arrivalsContainer.innerHTML = result;
   }
 
-  displayProducts(products) {
+  displayProducts(item) {
     let result = "";
-    products.forEach((item) => {
+    for (let j = 6; j < item.length; j++) {
       result += `
       <div class="product_card">
         <div class="product_img">
-          <img src=${item.image} alt="" />
-          <button class = "product_AddToCart_button" data-id=${item.id}>
+          <img src=${item[j].image} alt="" />
+          <button class = "product_AddToCart_button" data-id=${item[j].id}>
             <i class="fas fa-shopping-cart"></i>
             ADD TO CART
           </button>
         </div>
         <div class="product_details">
-          <p>${item.category}</p>
-          <h4>${item.name}</h4>
-          <h3 class="stars">${item.rating}</h3>
+          <p>${item[j].category}</p>
+          <h4>${item[j].name}</h4>
+          <h3 class="stars">${item[j].rating}</h3>
           <div class="product_item_price flex align-center justify-center">
-            <s>&#x20b9;${item.price.orignal}</s>
-            <p>&#x20b9;${item.price.current}</p>
-            <span class="tag">${item.price.discount}</span>
+            <s>&#x20b9;${item[j].price.orignal}</s>
+            <p>&#x20b9;${item[j].price.current}</p>
+            <span class="tag">${item[j].price.discount}</span>
           </div>
         </div>
       </div>
       `;
-    });
+    }
     productsContainer.innerHTML = result;
   }
 
@@ -255,27 +235,16 @@ document.addEventListener("DOMContentLoaded", () => {
   ui.setupApp();
 
   // For All Items
-  products.getAllItems().then((item) => {
-    Storage.savaItems(item);
-  });
-
-  // For New Arrival Section
   products
-    .getArrival()
-    .then((products) => {
-      ui.displayArrivals(products);
+    .getAllItems()
+    .then((item) => {
+      Storage.savaItems(item);
+
+      ui.displayArrivals(item);
+      ui.displayProducts(item);
     })
     .then(() => {
       ui.getArrivalCartBtn();
-    });
-
-  // For Products Section
-  products
-    .getProducts()
-    .then((products) => {
-      ui.displayProducts(products);
-    })
-    .then(() => {
       ui.getProductCartBtn();
     });
 });
