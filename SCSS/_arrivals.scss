@@ -28,7 +28,8 @@
       }
       button {
         position: absolute;
-        transform: translate(10%, 620%);
+        transform: translate(0%, 180px);
+        white-space: nowrap;
         background-color: $light-red;
         border: none;
         outline: none;
@@ -87,7 +88,7 @@
           filter: blur(2px);
         }
         button {
-          transform: translate(-100%, 620%);
+          transform: translate(-100%, 180px);
         }
       }
     }
